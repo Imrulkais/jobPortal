@@ -1,0 +1,76 @@
+{{> header}}
+
+				    <div class ="panel-heading"><h1>Create your account</h1></div>
+                    <form>
+        <div class="col-md-6">
+            
+                <div class="form-group">
+                    <label for="exampleInputFirstName">First Name</label>
+                    <input type="First Name<" class="form-control" id="exampleInputFirstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select class="form-control">
+                        <option>Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Email</label>
+                    <input type="Email" class="form-control" id="exampleInputEmail" placeholder="Email">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputMobile">Mobile</label>
+                    <input type="LastName" class="form-control" id="exampleInputMobile" placeholder="Mobile">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername">Username</label>
+                    <input type="Username" class="form-control" id="exampleInputUsername" placeholder="Username">
+
+                </div>
+
+           
+<div class="checkbox">
+                    <label>
+                        <input type="checkbox"> I agree to the jobportal.com Terms of use.
+                    </label>
+                </div>
+        <button type="submit" class="btn btn-default">Create Account</button>
+        
+        </div>
+        <div class="col-md-6">
+          
+                <div class="form-group">
+                    <label for="exampleInputName">Last Name</label>
+                    <input type="LastName" class="form-control" id="exampleInputName" placeholder="Last Name">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control">
+                        <option>Accounting/Finance</option>
+                        <option>Bank</option>
+                        <option>Engineering</option>
+                        <option>IT</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPW">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPW" placeholder="Password">
+                    <p class="help-block">Use at least 8 to 12 characters.</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputRPW">Retype Password</label>
+                    <input type="password" class="form-control" id="exampleInputRPW" placeholder="Retype Password">
+                </div>
+               
+                
+        </div>
+
+            </form>
+			
+            {{> footer}}
