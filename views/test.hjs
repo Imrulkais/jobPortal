@@ -1,0 +1,52 @@
+{{> header}}
+        <script>
+
+        function myFunction() {
+                alert(messages.formdata);
+                }
+             myFunction();    
+        </script>
+        <h2>Create Account</h2>
+        <h2>
+        {{messages.formdata}}
+        {{ messages.error }}
+        </h2>
+            {{#messages.error}}
+                <span class="help-inline red">{{ messages.error }}</span><br>
+            {{/messages.error}}
+
+            {{#messages.formdata}}
+                <span class="help-inline red">{{ this.value }}</span><br>
+            {{/messages.formdata}}
+
+        <h3 style="color: #768a28";>Account Information</h3>
+            <form class="beforefooter" action="/test" method="post">
+            <!--    <div class="form-group">
+                    <label for="exampleInputEmail1">Firstname</label>
+                    <input type="text" class="form-control" value ="{{formdata.firstname}}" name="firstname" id="exampleInputEmail1" required>
+                    <span class="help-inline red">Please correct the error</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Lastname</label>
+                    <input type="text" class="form-control" name="lastname" id="exampleInputEmail1" required>
+                    <span class="help-inline red">Please correct the error</span>
+                </div> -->
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" required>
+                    <span class="help-inline red">Please correct the error</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputEmail1" required>
+                    <span class="help-inline red">{{ error.password }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Confirm password</label>
+                    <input type="password" class="form-control" name="confirmPassword" id="exampleInputEmail1" required>
+                    <span class="help-inline red">Please correct the error</span>
+                </div>
+                <input type="submit" class="btn btn-success" value ="Continue">
+            </form>
+            </div>
+{{> footer}}
