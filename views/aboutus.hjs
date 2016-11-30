@@ -1,0 +1,23 @@
+{{> header}}
+				<div class="panel-heading"><h2>About us</h2></div>
+        <p> <br>At jobportal.com, we focus on simply providing high quality people with high quality jobs.</br>
+
+            We connect jobseekers with employers online, because we know that finding a job or a good candidate is not
+            easy. We believe that everyone should love what they do and we believe you should never give up or settle
+            for less. There are always opportunities. A new job can be more than a new paycheck, it can be a new career
+            and a new life</p>
+
+
+        <h2> Job Seekers</h2>
+        <p> We hope to provide job seekers not only with an array of job choices, but also with the tools and knowledge
+            to get these jobs. We believe that the way you present yourself and approach the job application process can
+            make the difference.</p>
+
+        <h2>Companies</h2>
+        <p> We also know that hiring people can be one of the most important and biggest challenges companies face.
+            Often the cost of hiring recruiters can be overwhelming while results are disappointing. We are here to
+            provide an affordable, usable platform filled with great candidates waiting for your call. See our sample
+            job descriptions and recruiting tips to make use of our platform in the best possible way. Post your job now
+            and receive your first applications today.</p>
+		
+		{{> footer}}
