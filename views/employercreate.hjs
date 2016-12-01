@@ -2,126 +2,90 @@
 
 		<h2>Create Account</h2>
 		<h3 style="color: #768a28";>Account Information</h3>
-            <form class="beforefooter">
+            <form class="beforefooter" action="something" method= "POST">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1">
+                    <label for="exampleInputEmail1">Email address<span class="help-inline red">*</span></label>
+                    <input type="email" name="aEmail" required class="form-control" id="exampleInputEmail1">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1">Password<span class="help-inline red">*</span></label>
+                    <input type="password" name="password" required class="form-control" id="exampleInputPassword1">
                 </div>
 				<div class="form-group">
-                    <label for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1">Confirm Password<span class="help-inline red">*</span></label>
+                    <input type="password" name="confirmPassword" required class="form-control" id="exampleInputPassword1">
                 </div>
 				<h3 style="color: #768a28";>Company Details</h3>
 				<div class="form-group">
-                    <label for="exampleInputPassword1">Company Name</label>
-                    <input type="text" class="form-control" id="companyname">
+                    <label for="exampleInputPassword1">Company Name<span class="help-inline red">*</span></label>
+                    <input type="text" name="cName" required class="form-control" id="companyname">
                 </div>
 				<div class="form-group">
-                    <label for="exampleInputPassword1">Contact Person</label>
-                    <input type="text" class="form-control" id="contactperson">
+                    <label for="exampleInputPassword1">Contact Person Name<span class="help-inline red">*</span></label>
+                    <input type="text" name="cPersonName" required class="form-control" id="contactperson">
                 </div>
 				<div class="form-group">
-                    <label for="exampleInputPassword1">Contact Person's Designation</label>
-                    <input type="text" class="form-control" id="ContactPerson'sDesignation">
+                    <label for="exampleInputPassword1">Contact Person's Designation<span class="help-inline red">*</span></label>
+                    <input type="text" name="cPersonDesignation" required class="form-control" id="ContactPerson'sDesignation">
 				</div>
 				<div class="form-group">
                     <label for="exampleInputPassword1">Contact Person's Mobile</label>
-                    <input type="password" class="form-control" id="ContactPerson'sMobile">
+                    <input type="text" name="cPersonMobile" class="form-control" id="ContactPerson'sMobile">
 				</div>
 				<div class="form-group">
-                    <label for="exampleInputPassword1">Contact Person's Email</label>
-                    <input type="email" class="form-control" id="ContactPerson'sEmail">
+                    <label for="exampleInputPassword1">Contact Person's Email<span class="help-inline red">*</span></label>
+                    <input type="email" name="cPersonEmail" required class="form-control" id="ContactPerson'sEmail">
 				</div>
 				<p style="font-size: 10px";>N.B. During your job posting, the system will provide you option whether to display your Company's original name or any alternative name in your published job. If you don't want to show your company name then you can use your given alternative name like, 'A Leading Manufacturing Company' or 'A Leading Multinational Company' etc.</p>
 				<h3 style="color: #768a28";>Industry Type</h3>
-				<p>You can select multiple industry type regarding your business</p>
-				<div class="col-md-6 col-sm-6 col-xs-6">
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Advertising Agency</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Airline</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Animal/Plant Breeding</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Audit Firms /Tax Consultant</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Bakery (Cake, Biscuit, Bread)</label>
-					</div>  
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Bar/Pub</label>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6 col-xs-6">
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Advertising Agency</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Airline</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Animal/Plant Breeding</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Audit Firms /Tax Consultant</label>
-					</div>
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Bakery (Cake, Biscuit, Bread)</label>
-					</div>  
-					<div class="checkbox">
-						<label><input type="checkbox" value="">Bar/Pub</label>
-					</div>
-				</div>
+				<p>You can select the industry type regarding your business</p>
 				<div class="form-group">
-					<label for="comment">Business Description</label>
-					<textarea class="form-control" rows="5" id="comment"></textarea>
-				</div>
-				<h3 style="color: #768a28";>Primary Contact Details</h3>
-				<div class="form-group">
-                    <label for="CompanyAddress">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1">
-                </div>
-				<div class="form-group">
-					<label for="sel1">Country</label>
-					<select class="form-control" id="sel1">
-					<option>Bangladesh</option>
-					<option>Germany</option>
-					<option>US</option>
-					<option>UK</option>
+					<label for="sel1">Industry type<span class="help-inline red">*</span></label>
+					<select class="form-control" id="sel1" name="industryType" required>
+					<option value="1">It/Communication</option>
+					<option value="2">Accounting</option>
+					<option value="3">Bank</option>
+					<option value="4">Commercial</option>
 					</select>
 				</div>
 				<div class="form-group">
-                    <label for="Company Address">City</label>
-                    <input type="text" class="form-control" id="City">
+					<label for="comment">Business Description</label>
+					<textarea class="form-control" name="bDescription" rows="5" id="comment"></textarea>
+				</div>
+				<h3 style="color: #768a28";>Primary Contact Details</h3>
+				<div class="form-group">
+                    <label for="CompanyAddress">Email address<span class="help-inline red">*</span></label>
+                    <input type="email" name="pEmail" required class="form-control" id="exampleInputEmail1">
+                </div>
+				<div class="form-group">
+					<label for="sel1">Country<span class="help-inline red">*</span></label>
+					<select class="form-control" id="sel1" name="pCountry" required>
+					<option value="1">Bangladesh</option>
+					<option value="2">Germany</option>
+					<option value="3">US</option>
+					<option value="4">UK</option>
+					</select>
+				</div>
+				<div class="form-group">
+                    <label for="Company Address">City<span class="help-inline red">*</span></label>
+                    <input type="text" name="pCity" required class="form-control" id="City">
                 </div>				
 				<div class="form-group">
-                    <label for="BillingAddress">Billing Address</label>
-                    <input type="text" class="form-control" id="BillingAddress">
+                    <label for="BillingAddress">Billing Address<span class="help-inline red">*</span></label>
+                    <input type="text" name="pContactAddress" required class="form-control" id="BillingAddress">
                 </div>
 				<div class="form-group">
-                    <label for="ContactPhone">Contact Phone</label>
-                    <input type="number" class="form-control" id="ContactPhone">
-                </div>
-				<div class="form-group">
-                    <label for="Company Address">Contact Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1">
+                    <label for="ContactPhone">Contact Phone<span class="help-inline red">*</span></label>
+                    <input type="text" name="pContactPhone" required class="form-control" id="ContactPhone">
                 </div>
 				<div class="form-group">
                     <label for="Company Address">Website Address (URL)</label>
-                    <input type="text" class="form-control" id="WebsiteAddress">
+                    <input type="text" name="webAddress" class="form-control" id="WebsiteAddress">
                 </div>
-				<h3 style="color: #768a28";>Please select an option from below to continue:</h3>
-				<label class="radio-inline"><input type="radio" name="optradio">I HAVE READ PRICING POLICY & ACCEPTED IT</label>
-				<label class="radio-inline"><input type="radio" name="optradio">I DO NOT ACCEPT PRICING TERMS</label>
+				<h3 style="color: #768a28";>Please select the option to continue:</h3>
+				<input type="checkbox" name="policy" required value="confirmed">I HAVE READ PRICING POLICY & ACCEPTED IT<br>
 				<div>
-				<button type="button" class="btn btn-success">Continue</button>
+				<button type="submit" class="btn btn-success">Continue</button>
 				</div>
 			</form>
 			</div>
