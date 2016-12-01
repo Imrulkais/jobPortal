@@ -1,0 +1,61 @@
+{{> header}}
+			<h3 style="color: #768a28";>Contact information</h3>
+			<p><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-earphone"></button></span> Dial <span style="color: #768a28; font-size: 20px";>123456 </span>from any number.</p>
+			<p>IP phone:    +49 09612444888 from any number.</p>
+			<p>T&T Phone :    +49-2-9117179, +49-2-9140345, +49-2-9143104 & +49-2-9144559.</p>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>For any sales query (for the clients):</tr>
+				<tr>
+					<td>Jahid</td>
+					<td>123456789</td>
+				</tr>
+				<tr>
+					<td>Emon</td>
+					<td>123456789</td>
+				</tr>
+				<tr>
+					<td>Imrul</td>
+					<td>123456789</td>
+				</tr>
+				<tr>
+					<td>Saiful</td>
+					<td>123456789</td>
+				</tr>
+				<tr>
+					<td>Rony</td>
+					<td>123456789</td>
+				</tr>
+				<tr>
+					<td>Tanvir</td>
+					<td>123456789</td>
+				</tr>
+				<tr>
+					<td>Foysal</td>
+					<td>123456789</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3 style="color: #768a28">Google Map</h3>
+
+<div id="map" style="width:1100px;height:400px;background:yellow; margin-bottom:20px;"></div>
+
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.2), zoom: 10
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+	                
+{{> footer}}
