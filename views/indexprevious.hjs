@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ userName }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ userName }} is back here!</h1>
+    <p>Welcome back {{ userName }}</p>
+    <p>Log out <a href="/logout">here</a></p>
+  </body>
+</html>

@@ -1,8 +1,9 @@
 {{> header}}
 
 		<h2>Create Account</h2>
+		{{ messages.success }}
 		<h3 style="color: #768a28";>Account Information</h3>
-            <form class="beforefooter" action="something" method= "POST">
+            <form class="beforefooter" action="employerRegistration" method= "POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address<span class="help-inline red">*</span></label>
                     <input type="email" name="aEmail" required class="form-control" id="exampleInputEmail1">

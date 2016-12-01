@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Log In</title>
+  </head>
+  <body>
+    <h1>Please log in :</h1>
+    <form action="/login" method="post">
+    	<div>
+    	<label>Username:</label>
+    	<input type="text" name="username"/><br/>
+    	</div>
+    	<div>
+    	<label>Password:</label>
+    	<input type="password" name="password"/>
+    	</div>
+    	<div>
+    	<input type="submit" value="Submit"/>
+    	</div>
+    </form>
+    <h1>Or sign up <a href="/signup">here</a></h1>
+  </body>
+</html>

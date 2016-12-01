@@ -105,7 +105,7 @@ app.get('/employercreate', function(req, res, next) {
         });
 });
 
-app.post('/test', function(req, res, next) {
+app.post('/employerRegistration', function(req, res, next) {
 
     // req.checkBody('password', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
     // req.checkBody('confirmPassword', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
@@ -131,7 +131,7 @@ app.post('/test', function(req, res, next) {
     // else {
     employerAction.addEmployer(req.body);
   req.flash('success', 'You have been signed up');
-  res.redirect('/test');
+  res.redirect('/employercreate');
 // }
 });
 

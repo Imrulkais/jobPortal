@@ -1,260 +1,256 @@
-{{>header }}
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2>BROWSE CATEGORY</h2>
-                        <h4>Find jobs by category</h4>
-                        <div class="col-md-6">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-                            <div class="bodycontent1">
-                                <ul>
-                                    <li><a href="#"> Accounting/Finance</a></li>
-                                    <li><a href="#"> Bank/ Non-Bank Fin. Institution</a></li>
-                                    <li><a href="#"> Commercial/Supply Chain</a></li>
-                                    <li><a href="#"> Engineer/Architects</a></li>
-                                    <li><a href="#"> Garments/Textile</a></li>
-                                    <li><a href="#"> HR/Org. Development</a></li>
-                                    <li><a href="#"> Gen Mgt/Admin</a></li>
-                                    <li><a href="#"> Design/Creative</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="bodycontent1">
-                                <ul>
-                                    <li><a href="#"> Production/Operation</a></li>
-                                    <li><a href="#"> Hospitality/ Travel/ Tourism</a></li>
-                                    <li><a href="#"> Beauty Care/ Health & Fitness</a></li>
-                                    <li><a href="#"> IT & Telecommunication</a></li>
-                                    <li><a href="#"> Marketing/Sales</a></li>
-                                    <li><a href="#"> Customer Support/Call Centre</a></li>
-                                    <li><a href="#"> Media/Ad./Event Mgt.</a></li>
-                                    <li><a href="#"> Medical/Pharma</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id = "text_slider">
-                            <h2>GOVT JOBS</h2>
-                            <div class="text_sidebar">
-                                <h3> <a href="#">Lufthansa Group</a></h3>
-                                <p>IT Specialist</p>
-                                <p>mechanical Engineer </p>
-                            </div>
-
-                            <div>
-                                <h3> <a href="#">Deutsche Bahn</a></h3>
-                                <p>Ticket Checker</p>
-                                <p>Accountant</p>
-                            </div>
-                            <div>
-                                <h3> <a href="#">Advandus GmbH</a></h3>
-                                <p>Junior Softwareentwickler</p>
-                                <p>Marketing Officer</p></div>
-                        </div>
-                        <script>
-                                                    			$("#text_slider div:gt(0)").hide();
-                                                    			setInterval(function () {
-                                                    				$('#text_slider div:first')
-                                                    						.fadeOut(500).next().fadeIn(1000).end().appendTo('#text_slider');
-
-
-                                                    			}, 3000);
-                                                    		</script>
+       {{>header }}
+        <div class="row">
+            <div class="col-md-8">
+                <h2>BROWSE CATEGORY</h2>
+                <h4>Find jobs by category</h4>
+                <div class="col-md-6">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+                    <div class="bodycontent1">
+                        <ul>
+                            <li><a href="#"> Accounting/Finance</a></li>
+                            <li><a href="#"> Bank/ Non-Bank Fin. Institution</a></li>
+                            <li><a href="#"> Commercial/Supply Chain</a></li>
+                            <li><a href="#"> Engineer/Architects</a></li>
+                            <li><a href="#"> Garments/Textile</a></li>
+                            <li><a href="#"> HR/Org. Development</a></li>
+                            <li><a href="#"> Gen Mgt/Admin</a></li>
+                            <li><a href="#"> Design/Creative</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="middle_content">
+                <div class="col-md-6">
+                    <div class="bodycontent1">
+                        <ul>
+                            <li><a href="#"> Production/Operation</a></li>
+                            <li><a href="#"> Hospitality/ Travel/ Tourism</a></li>
+                            <li><a href="#"> Beauty Care/ Health & Fitness</a></li>
+                            <li><a href="#"> IT & Telecommunication</a></li>
+                            <li><a href="#"> Marketing/Sales</a></li>
+                            <li><a href="#"> Customer Support/Call Centre</a></li>
+                            <li><a href="#"> Media/Ad./Event Mgt.</a></li>
+                            <li><a href="#"> Medical/Pharma</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id = "text_slider">
+                    <h2>GOVT JOBS</h2>
+                    <div class="text_sidebar">
+                        <h3> <a href="#">Lufthansa Group</a></h3>
+                        <p>IT Specialist</p>
+                        <p>mechanical Engineer </p>
+                    </div>
+
+                    <div>
+                        <h3> <a href="#">Deutsche Bahn</a></h3>
+                        <p>Ticket Checker</p>
+                        <p>Accountant</p>
+                    </div>
+                    <div>
+                        <h3> <a href="#">Advandus GmbH</a></h3>
+                        <p>Junior Softwareentwickler</p>
+                        <p>Marketing Officer</p></div>
+                </div>
+                <script>
+                        $("#text_slider div:gt(0)").hide();
+                        setInterval(function () {
+                                $('#text_slider div:first')
+                                                .fadeOut(0).next().fadeIn(1000).end().appendTo('#text_slider');
+
+
+                        }, 3000);
+                </script>
+            </div>
+        </div>
+        <div class="middle_content">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>HOT JOBS</h2>
+                    <h4>Find jobs here</h4> 
+                    <div class="hot_jobs">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="jobscontent1left">
+                                    <img src="images/beol48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row company">
+                                <div class="jobscontent1left">
+                                    <img src="images/bdjobs48a.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BDJobs Ltd</h5> <li>
+                                        <li><a href="#">Field Marketing Executive</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row company">
+                                <div class="jobscontent1left">
+                                    <img src="images/generalpharma48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">General Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row company">
+                                <div class="jobscontent1left">
+                                    <img src="images/HABSL.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="jobscontent1left">
+                                    <img src="images/labaidgrouplogo48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row company">
+                                <div class="jobscontent1left">
+                                    <img src="images/radiantlogo.gif" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row company">
+                                <div class="jobscontent1left">
+                                    <img src="images/savethec48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row company">
+                                <div class="jobscontent1left">
+                                    <img src="images/worldvision48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
+                                </div>  
+
+                                <div class="companydetails1">
+                                    <!--<h5 >BEOL Corporation</h5>-->   
+                                    <ul>
+                                        <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
+                                        <li><a href="#">Fire Fighting Design Engineer</a><li>
+                                        <li><a href="#">Commercial Executive</a><li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md-8">
-                            <h2>HOT JOBS</h2>
-                            <h4>Find jobs here</h4> 
-                            <div class="hot_jobs">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="jobscontent1left">
-                                            <img src="images/beol48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row company">
-                                        <div class="jobscontent1left">
-                                            <img src="images/bdjobs48a.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BDJobs Ltd</h5> <li>
-                                                <li><a href="#">Field Marketing Executive</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row company">
-                                        <div class="jobscontent1left">
-                                            <img src="images/generalpharma48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">General Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row company">
-                                        <div class="jobscontent1left">
-                                            <img src="images/HABSL.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="jobscontent1left">
-                                            <img src="images/labaidgrouplogo48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row company">
-                                        <div class="jobscontent1left">
-                                            <img src="images/radiantlogo.gif" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row company">
-                                        <div class="jobscontent1left">
-                                            <img src="images/savethec48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="row company">
-                                        <div class="jobscontent1left">
-                                            <img src="images/worldvision48.jpg" alt="Mountain View" style="width:60px;height:60px; margin-top: 25px;">
-                                        </div>	
-
-                                        <div class="companydetails1">
-                                            <!--<h5 >BEOL Corporation</h5>-->   
-                                            <ul>
-                                                <li ><h5 class="hot_job_header">BEOL Corporation</h5> <li>
-                                                <li><a href="#">Fire Fighting Design Engineer</a><li>
-                                                <li><a href="#">Commercial Executive</a><li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12">
-                                <div id = "text_slider1">
-                                    <h2>SPECIAL SKILLED JOBS</h2>
-                                    <div class="text_sidebar1">
-                                                                    <h3> <a href="#">Lufthansa Group</a></h3>
-                                                                    <p>IT Specialist</p>
-                                                                    <p>mechanical Engineer </p>
-                                                                </div>
-
-                                                                <div>
-                                                                    <h3> <a href="#">Deutsche Bahn</a></h3>
-                                                                    <p>Ticket Checker</p>
-                                                                    <p>Accountant</p>
-                                                                </div>
-                                                                <div>
-                                                                    <h3> <a href="#">Advandus GmbH</a></h3>
-                                                                    <p>Junior Softwareentwickler</p>
-                                                                    <p>Marketing Officer</p></div>
-                                                            </div>
-                                                            <script>
-                                                                                                $("#text_slider1 div:gt(0)").hide();
-                                                                                 setInterval(function () {
-                                                                                 $('#text_slider1 div:first')
-                                                                                    .fadeOut(500).next().fadeIn(1000).end().appendTo('#text_slider1');
-
-
-                                       }, 3000);
-                                                                                                            </script>
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                <div id = "text_slider2">
-                                    <h2>Bottom Sidebar</h2>
-                                    <div class="text_sidebar2">
+                        <div class="col-md-12">
+                            <div id = "text_slider1">
+                                <h2>SPECIAL SKILLED JOBS</h2>
+                                <div class="text_sidebar1">
                                     <h3> <a href="#">Lufthansa Group</a></h3>
-                                                                                                        <p>IT Specialist</p>
-                                                                                                        <p>mechanical Engineer </p>
-                                                                                                    </div>
-
-                                                                                                    <div>
-                                                                                                        <h3> <a href="#">Deutsche Bahn</a></h3>
-                                                                                                        <p>Ticket Checker</p>
-                                                                                                        <p>Accountant</p>
-                                                                                                    </div>
-                                                                                                    <div>
-                                                                                                        <h3> <a href="#">Advandus GmbH</a></h3>
-                                                                                                        <p>Junior Softwareentwickler</p>
-                                                                                                        <p>Marketing Officer</p></div>
-                                                                                                </div>
-                                                                                                <script>
-                                                                                                                                                                                                $("#text_slider2 div:gt(0)").hide();
-                                                                                                                                                                                 setInterval(function () {
-                                                                                                                                                                                 $('#text_slider2 div:first')
-                                                                                                                                                                                    .fadeOut(500).next().fadeIn(1000).end().appendTo('#text_slider2');
-
-
-                                                                                                                                       }, 3000);
-                                                                                                                                                                                                            </script>
-
-
+                                    <p>IT Specialist</p>
+                                    <p>mechanical Engineer </p>
                                 </div>
+
+                                <div>
+                                    <h3> <a href="#">Deutsche Bahn</a></h3>
+                                    <p>Ticket Checker</p>
+                                    <p>Accountant</p>
+                                </div>
+                                <div>
+                                    <h3> <a href="#">Advandus GmbH</a></h3>
+                                    <p>Junior Softwareentwickler</p>
+                                    <p>Marketing Officer</p></div>
                             </div>
+                            <script>
+                             $("#text_slider1 div:gt(0)").hide();
+                             setInterval(function () {
+                             $('#text_slider1 div:first')
+                                .fadeOut(0).next().fadeIn(1000).end().appendTo('#text_slider1');
+                                }, 3000);
+                            </script>
 
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id = "text_slider2">
+                                <h2>Bottom Sidebar</h2>
+                                <div class="text_sidebar2">
+                                    <h3> <a href="#">Lufthansa Group</a></h3>
+                                    <p>IT Specialist</p>
+                                    <p>mechanical Engineer </p>
+                                </div>
+
+                                <div>
+                                    <h3> <a href="#">Deutsche Bahn</a></h3>
+                                    <p>Ticket Checker</p>
+                                    <p>Accountant</p>
+                                </div>
+                                <div>
+                                    <h3> <a href="#">Advandus GmbH</a></h3>
+                                    <p>Junior Softwareentwickler</p>
+                                    <p>Marketing Officer</p></div>
+                            </div>
+                            <script>
+                                        $("#text_slider2 div:gt(0)").hide();
+                                        setInterval(function () {
+                                               $('#text_slider2 div:first')
+                                               .fadeOut(0).next().fadeIn(1000).end().appendTo('#text_slider2');
+                                           }, 3000);
+                            </script>
+
+
+                        </div>
+                    </div>
+
                 </div>
-{{>footer }}
+            </div>
+        </div>
+        {{>footer }}
