@@ -1,76 +1,70 @@
 {{> header}}
 
-				    <div class ="panel-heading"><h1>Create your account</h1></div>
-                    <form>
-        <div class="col-md-6">
-            
-                <div class="form-group">
-                    <label for="exampleInputFirstName">First Name</label>
-                    <input type="First Name<" class="form-control" id="exampleInputFirstName" placeholder="First Name">
+                    <div class ="panel-heading"><h1>Create your account</h1></div>
+                    {{ messages.success }}
+                    <form action="employeeRegistration" method="post">
+            <div class="form-group">
+                    <label for="exampleInputUsername">Username<span class="help-inline red">*</span></label>
+                    <input type="text" name="username" required class="form-control" id="exampleInputUsername" placeholder="Username">
+
                 </div>
                 <div class="form-group">
-                    <label>Gender</label>
-                    <select class="form-control">
+                    <label for="exampleInputPW">Password<span class="help-inline red">*</span></label>
+                    <input type="password" name="password" required class="form-control" id="exampleInputPW" placeholder="Password">
+                    <p class="help-block">Use at least 8 to 12 characters.</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputRPW">Retype Password<span class="help-inline red">*</span></label>
+                    <input type="password"  name="rePassword" required class="form-control" id="exampleInputRPW" placeholder="Retype Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFirstName">First Name<span class="help-inline red">*</span></label>
+                    <input type="text" name="fname" required class="form-control" id="exampleInputFirstName" placeholder="First Name" name="fName">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName">Last Name<span class="help-inline red">*</span></label>
+                    <input type="text" name="lname" required class="form-control" id="exampleInputName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label>Gender<span class="help-inline red">*</span></label>
+                    <select class="form-control" name="gender" required>
                         <option>Select</option>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail">Email</label>
-                    <input type="Email" class="form-control" id="exampleInputEmail" placeholder="Email">
+                    <label for="exampleInputEmail">Email<span class="help-inline red">*</span></label>
+                    <input type="Email" name="email" required class="form-control" id="exampleInputEmail" placeholder="Email">
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputMobile">Mobile</label>
-                    <input type="LastName" class="form-control" id="exampleInputMobile" placeholder="Mobile">
+                    <label for="exampleInputMobile">Mobile<span class="help-inline red">*</span></label>
+                    <input type="text" name="mobile" required class="form-control" id="exampleInputMobile" placeholder="Mobile">
                 </div>
+                
+
                 <div class="form-group">
-                    <label for="exampleInputUsername">Username</label>
-                    <input type="Username" class="form-control" id="exampleInputUsername" placeholder="Username">
+                    <label>Category<span class="help-inline red">*</span></label>
+                    <select class="form-control" id="sel1" name="industryType" required>
+                    <option value="1">It/Communication</option>
+                    <option value="2">Accounting</option>
+                    <option value="3">Bank</option>
+                    <option value="4">Commercial</option>
+                    </select>
 
                 </div>
-
-           
-<div class="checkbox">
+                
+               <div class="checkbox">
                     <label>
-                        <input type="checkbox"> I agree to the jobportal.com Terms of use.
+                        <input type="checkbox" name="confirmation" value="confirmed" required >I agree to the jobportal.com Terms of use.<span class="help-inline red">*</span>
                     </label>
                 </div>
         <button type="submit" class="btn btn-default">Create Account</button>
         
-        </div>
-        <div class="col-md-6">
-          
-                <div class="form-group">
-                    <label for="exampleInputName">Last Name</label>
-                    <input type="LastName" class="form-control" id="exampleInputName" placeholder="Last Name">
-                </div>
 
-                <div class="form-group">
-                    <label>Category</label>
-                    <select class="form-control">
-                        <option>Accounting/Finance</option>
-                        <option>Bank</option>
-                        <option>Engineering</option>
-                        <option>IT</option>
-                    </select>
-
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPW">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPW" placeholder="Password">
-                    <p class="help-block">Use at least 8 to 12 characters.</p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputRPW">Retype Password</label>
-                    <input type="password" class="form-control" id="exampleInputRPW" placeholder="Retype Password">
-                </div>
-               
-                
-        </div>
 
             </form>
-			
+            
             {{> footer}}

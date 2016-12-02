@@ -16,6 +16,7 @@ var db = require('./db/users');
 var database = require('./db');
 var action = require('./db/action');
 var employerAction = require('./db/employerAction');
+var employeeAction = require('./db/employeeAction');
 
 //Configuring flash
 var flash = require('express-flash')
@@ -129,6 +130,7 @@ app.post('/employerRegistration', function(req, res, next) {
     //         // return done(null, false, req.flash('formdata', req.body));
     // }
     // else {
+
     employerAction.addEmployer(req.body);
   req.flash('success', 'You have been signed up');
   res.redirect('/employercreate');
@@ -141,6 +143,59 @@ app.get('/employeecreate', function(req, res, next) {
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
         });
 });
+
+app.post('/employeeRegistration', function(req, res, next) {
+
+    // req.checkBody('password', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
+    // req.checkBody('confirmPassword', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
+    // var errors = req.validationErrors();
+    // // console.log(errors);
+    // if (errors) {
+    //         var messages = [];
+    //         errors.forEach(function(error) {
+
+    //           // messagess[error.param] = error.msg;
+    //              messages.push(error.msg);
+    //         });
+    //         console.log(messages);
+    //         // req.session.errorssss = messagess;
+    //         console.log(req.body);
+    //         req.flash( 'formdata',req.body); // load form data into flash
+    //         req.flash('error', messages);
+
+    //         // console.log(formdata);
+    //        res.redirect('/test');
+    //         // return done(null, false, req.flash('formdata', req.body));
+    // }
+    // else {
+      
+      // var findName = employeeAction.findEmployeeName(req.body.username);
+      // console.log(findName); 
+      // if(findName == []){
+      //   req.flash('usernameExist', 'The username is already exist');
+      // };
+      // // req.flash('usernameExist', 'The username is already exist');
+      // res.redirect('/employeecreate');
+    // employeeAction.findEmployeeName(req.body,function(err,user){
+    //   if (err)
+    //             return done(err);
+    //   if (user) {
+    //     req.flash('emailExist', 'The username is already exist');
+    //     res.redirect('/employeecreate');
+    //   }
+    //   else 
+    //   {
+        employeeAction.addEmployee(req.body);
+        req.flash('success', 'You have been signed up');
+        res.redirect('/employeecreate');
+    //   }
+    // });
+    
+  
+  
+// }
+});
+
 
 app.get('/aboutus', function(req, res, next) {
     res.render('aboutus',
