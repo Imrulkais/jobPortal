@@ -221,22 +221,22 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div id = "text_slider2">
-                                <h2>Bottom Sidebar</h2>
+                                <h2>Special Training</h2>
                                 <div class="text_sidebar2">
-                                    <h3> <a href="#">Lufthansa Group</a></h3>
-                                    <p>IT Specialist</p>
-                                    <p>mechanical Engineer </p>
+                                    <h3> <a href="#">Accounting for Professionals</a></h3>
+                                    <p>Duration: 1 Day</p>
+                                    <p>Trainer: Mr. ABC </p>
                                 </div>
 
                                 <div>
-                                    <h3> <a href="#">Deutsche Bahn</a></h3>
-                                    <p>Ticket Checker</p>
-                                    <p>Accountant</p>
+                                    <h3> <a href="#">Office Management</a></h3>
+                                    <p>Duration: 2 Days</p>
+                                    <p>Trainer: Mr. FGH</p>
                                 </div>
                                 <div>
-                                    <h3> <a href="#">Advandus GmbH</a></h3>
-                                    <p>Junior Softwareentwickler</p>
-                                    <p>Marketing Officer</p></div>
+                                    <h3> <a href="#">Business Process Management Training</a></h3>
+                                    <p>Duration: 4 Days</p>
+                                    <p>Trainer: Mr. JKL</p></div>
                             </div>
                             <script>
                                         $("#text_slider2 div:gt(0)").hide();
