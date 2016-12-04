@@ -56,7 +56,7 @@
 						<ul>
 							<li class="active"><a href="/">JOBS</a></li>
 							<li><a href="#">MY JOBS</a></li>
-							<li><a href="#">TRAINING</a></li>
+							<li><a href="traning">TRAINING</a></li>
 							<li><a href="contactus">CONTACT US</a></li>
 							<li><a href="aboutus">ABOUT US</a></li>
 						</ul>

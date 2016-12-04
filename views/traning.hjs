@@ -1,0 +1,97 @@
+{{> header}}
+
+
+  <h2>Training Program:</h2>
+<br> </br>
+  <p>As a job we offer some training program for job seekers. It will added advantage for those who are looking for a suitable 
+  jobs. Also our training program is highly appreciated by employers. Currently we offer several training program in different 
+  field of jobs. We charge small amounts of cost for training program. Please contact our email address of visit our office to 
+  know more details about training program and exact dates.</p>    
+<br> </br>
+  <table class="table table-bordered table-hover table-caption">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Subject</th>
+        <th>Trainer</th>
+		<th>Duration</th>
+		<th>Price </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td>Accounting for Professionals</td>
+        <td>Mr. ABC</td>
+		<td>1 Day</td>
+        <td>€ 40</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Industrial Engineering Basics for RMG</td>
+        <td>Mr. BCD</td>
+		<td>1 Day</td>
+        <td>€ 40</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>Export Import, Indenting Business (Commission Agent), C&F Agent, e-Tender & Buying House Business</td>
+        <td>Mr. CDE</td>
+		<td>2 Days</td>
+        <td>€ 70</td>
+      </tr>
+	  <tr>
+        <td>04</td>
+        <td>Communication Skills for Call Center Professionals</td>
+        <td>Mr. DEF</td>
+		<td>1 Day</td>
+        <td>€ 35</td>
+      </tr>
+	  <tr>
+        <td>05</td>
+        <td>Sales and Marketing Management Master Class</td>
+        <td>Mr. EFG</td>
+		<td>6 Days</td>
+        <td>€ 80</td>
+      </tr>
+	  <tr>
+        <td>06</td>
+        <td>Office Management</td>
+        <td>Mr. FGH</td>
+		<td>2 Days</td>
+        <td>€ 50</td>
+      </tr>
+	  <tr>
+        <td>07</td>
+        <td>Business Intelligence with MS Excel</td>
+        <td>Mr. GHI</td>
+		<td>3 Days</td>
+        <td>€ 60</td>
+      </tr>
+	  <tr>
+        <td>08</td>
+        <td>Essential English for Official Purposes</td>
+        <td>Mr. HIJ</td>
+		<td>5 Days</td>
+        <td>€ 40</td>
+      </tr>
+	  <tr>
+        <td>09</td>
+        <td>Implementing Lean Six Sigma in Industry</td>
+        <td>Mr. IJK</td>
+		<td>3 Days</td>
+        <td>€ 50</td>
+      </tr>
+	  <tr>
+        <td>10</td>
+        <td>Business Process Management Training</td>
+        <td>Mr. JKL</td>
+		<td>4 Days</td>
+        <td>€ 60</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+{{> footer}}

@@ -101,8 +101,14 @@ app.get('/', function(req, res, next) {
 
 app.get('/employercreate', function(req, res, next) {
     res.render('employercreate',
-    { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+        });
+});
+app.get('/traning', function(req, res, next) {
+    res.render('traning',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
         });
 });
 
