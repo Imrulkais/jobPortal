@@ -146,54 +146,26 @@ app.get('/employeecreate', function(req, res, next) {
 
 app.post('/employeeRegistration', function(req, res, next) {
 
-    // req.checkBody('password', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
-    // req.checkBody('confirmPassword', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
-    // var errors = req.validationErrors();
-    // // console.log(errors);
-    // if (errors) {
-    //         var messages = [];
-    //         errors.forEach(function(error) {
+    req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
+    req.checkBody('rePassword', 'Confirm password is not match with password').equals(req.body.password);
+    var errors = req.validationErrors();
 
-    //           // messagess[error.param] = error.msg;
-    //              messages.push(error.msg);
-    //         });
-    //         console.log(messages);
-    //         // req.session.errorssss = messagess;
-    //         console.log(req.body);
-    //         req.flash( 'formdata',req.body); // load form data into flash
-    //         req.flash('error', messages);
-
-    //         // console.log(formdata);
-    //        res.redirect('/test');
-    //         // return done(null, false, req.flash('formdata', req.body));
-    // }
-    // else {
+    console.log(errors);
+    if (errors) {
+            
+            console.log(req.body);
+            // req.flash( 'formdata',req.body); // load form data into flash
+            req.flash('errors', errors);
+           res.redirect('/employeecreate');
+            // return done(null, false, req.flash('formdata', req.body));
+    }
+    else
+    {
+      employeeAction.findEmployeeName(req, res);
+      // employeeAction.findEmployeeEmail(req, res);
+    }
       
-      // var findName = employeeAction.findEmployeeName(req.body.username);
-      // console.log(findName); 
-      // if(findName == []){
-      //   req.flash('usernameExist', 'The username is already exist');
-      // };
-      // // req.flash('usernameExist', 'The username is already exist');
-      // res.redirect('/employeecreate');
-    // employeeAction.findEmployeeName(req.body,function(err,user){
-    //   if (err)
-    //             return done(err);
-    //   if (user) {
-    //     req.flash('emailExist', 'The username is already exist');
-    //     res.redirect('/employeecreate');
-    //   }
-    //   else 
-    //   {
-        employeeAction.addEmployee(req.body);
-        req.flash('success', 'You have been signed up');
-        res.redirect('/employeecreate');
-    //   }
-    // });
     
-  
-  
-// }
 });
 
 

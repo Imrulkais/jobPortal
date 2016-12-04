@@ -1,14 +1,23 @@
 {{> header}}
 
-                    <div class ="panel-heading"><h1>Create your account</h1></div>
-                    {{ messages.success }}
-                    <form action="employeeRegistration" method="post">
-            <div class="form-group">
+            <div class ="panel-heading"><h1>Create your account</h1></div>
+            {{#messages.success}}
+            <div class="alert alert-success">
+              {{ messages.success }}
+            </div>
+            {{/messages.success}}
+            {{#messages.errors}}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                    </div>
+            {{/messages.errors}}
+            <form action="employeeRegistration" method="post">
+                <div class="form-group">
                     <label for="exampleInputUsername">Username<span class="help-inline red">*</span></label>
                     <input type="text" name="username" required class="form-control" id="exampleInputUsername" placeholder="Username">
-
+                    <span class="help-inline red">{{ messages.usernameExist}}</span>
                 </div>
-                <div class="form-group">
+                 <div class="form-group">
                     <label for="exampleInputPW">Password<span class="help-inline red">*</span></label>
                     <input type="password" name="password" required class="form-control" id="exampleInputPW" placeholder="Password">
                     <p class="help-block">Use at least 8 to 12 characters.</p>
@@ -17,7 +26,7 @@
                     <label for="exampleInputRPW">Retype Password<span class="help-inline red">*</span></label>
                     <input type="password"  name="rePassword" required class="form-control" id="exampleInputRPW" placeholder="Retype Password">
                 </div>
-                <div class="form-group">
+                  <div class="form-group">
                     <label for="exampleInputFirstName">First Name<span class="help-inline red">*</span></label>
                     <input type="text" name="fname" required class="form-control" id="exampleInputFirstName" placeholder="First Name" name="fName">
                 </div>
@@ -33,12 +42,17 @@
                         <option value="female">Female</option>
                         <option value="other">Other</option>
                     </select>
-                </div>
+                </div>  
+
+
                 <div class="form-group">
                     <label for="exampleInputEmail">Email<span class="help-inline red">*</span></label>
                     <input type="Email" name="email" required class="form-control" id="exampleInputEmail" placeholder="Email">
-
+                    <span class="help-inline red">{{ messages.userEmail }}</span>
                 </div>
+               
+
+
                 <div class="form-group">
                     <label for="exampleInputMobile">Mobile<span class="help-inline red">*</span></label>
                     <input type="text" name="mobile" required class="form-control" id="exampleInputMobile" placeholder="Mobile">
@@ -60,7 +74,7 @@
                     <label>
                         <input type="checkbox" name="confirmation" value="confirmed" required >I agree to the jobportal.com Terms of use.<span class="help-inline red">*</span>
                     </label>
-                </div>
+                </div>  
         <button type="submit" class="btn btn-default">Create Account</button>
         
 
