@@ -8,9 +8,10 @@ var bodyParser = require('body-parser');
 
 
 
+
 // Configuring Passport
 var passport = require('passport');
-var Strategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 var db = require('./db/users');
 
 var database = require('./db');
@@ -19,7 +20,7 @@ var employerAction = require('./db/employerAction');
 var employeeAction = require('./db/employeeAction');
 
 //Configuring flash
-var flash = require('express-flash')
+var flash = require('express-flash');
 
 // Configure the local strategy for use by Passport.
 //
@@ -27,15 +28,55 @@ var flash = require('express-flash')
 // (`username` and `password`) submitted by the user.  The function must verify
 // that the password is correct and then invoke callback `cb` with a user object, which
 // will be set at `req.user` in route handlers after authentication.
-passport.use(new Strategy(
-    function(username, password, cb) {
-      db.findByUsername(username, function(err, user) {
+
+passport.use('EmployeeSignIn-local',new LocalStrategy({
+  usernameField: 'username',
+  passwordField: 'password',
+  passReqToCallback: true, },
+    function(req, username, password, cb ) {
+      employeeAction.findByUsername(username, function( err, user) {
         if (err) { return cb(err); }
-        if (!user) { return cb(null, false); }
-        if (user.password != password) { return cb(null, false); }
+        if (!user) { 
+         return cb(null, false, req.flash('username','Invalid username')); 
+       }
+        if (user.password != password) { 
+         return cb(null, false, req.flash('password','Wrong password'));
+          }
         return cb(null, user);
       });
     }));
+
+passport.use('EmployerSignIn-local',new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password',
+  passReqToCallback: true, },
+    function(req, email, password, cb ) {
+      employerAction.findByEmail(email, function( err, user) {
+        if (err) { return cb(err); }
+        if (!user) { 
+         return cb(null, false, req.flash('email','Invalid email address')); 
+       }
+        if (user.password != password) { 
+         return cb(null, false, req.flash('password','Wrong password'));
+          }
+        return cb(null, user);
+      });
+    }));
+
+// passport.use('employeeSignIn', new LocalStrategy({
+//       usernameField: 'username',
+//       passwordField: 'password' // this is the virtual field on the model
+//     },
+
+//     function(username, password, cb) {
+//       console.log("coming");
+//       employeeAction.findByUsername(username, function(err, user) {
+//         if (err) { console.log('finding username');return cb(err); }
+//         if (!user) { return cb(null, false); }
+//         if (user.password != password) { return cb(null, false); }
+//         return cb(null, user);
+//       });
+//     }));
 
 // Configure Passport authenticated session persistence.
 //
@@ -45,16 +86,28 @@ passport.use(new Strategy(
 // serializing, and querying the user record by ID from the database when
 // deserializing.
 passport.serializeUser(function(user, cb) {
-  cb(null, user.id);
+  cb(null, user);
 });
 
-passport.deserializeUser(function(id, cb) {
-  db.findById(id, function (err, user) {
+passport.deserializeUser(function(user, cb) {
+
+if (user.fname) {
+    // serialize user
+    employeeAction.findById(user.id, function (err, user) {
     if (err) { return cb(err); }
     cb(null, user);
   });
-});
 
+  }
+if (user.aEmail) {
+    // serialize user
+    employerAction.findById(user.id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+}
+
+});
 var app = express();
 
 // view engine setup
@@ -99,12 +152,6 @@ app.get('/', function(req, res, next) {
         });
 });
 
-app.get('/employercreate', function(req, res, next) {
-    res.render('employercreate',
-        {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
-        });
-});
 app.get('/traning', function(req, res, next) {
     res.render('traning',
         {
@@ -112,36 +159,41 @@ app.get('/traning', function(req, res, next) {
         });
 });
 
+// Employer Actions
+
+app.get('/employercreate', function(req, res, next) {
+    res.render('employercreate',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+        });
+});
+
+
 app.post('/employerRegistration', function(req, res, next) {
-
-    // req.checkBody('password', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
-    // req.checkBody('confirmPassword', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
-    // var errors = req.validationErrors();
-    // // console.log(errors);
-    // if (errors) {
-    //         var messages = [];
-    //         errors.forEach(function(error) {
-
-    //           // messagess[error.param] = error.msg;
-    //              messages.push(error.msg);
-    //         });
-    //         console.log(messages);
-    //         // req.session.errorssss = messagess;
-    //         console.log(req.body);
-    //         req.flash( 'formdata',req.body); // load form data into flash
-    //         req.flash('error', messages);
-
-    //         // console.log(formdata);
-    //        res.redirect('/test');
-    //         // return done(null, false, req.flash('formdata', req.body));
-    // }
-    // else {
 
     employerAction.addEmployer(req.body);
   req.flash('success', 'You have been signed up');
   res.redirect('/employercreate');
-// }
 });
+
+
+app.get('/employersign', function(req, res, next) {
+    res.render('employersign',
+    { 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+        });
+});
+
+app.post('/employersign',
+    passport.authenticate('EmployerSignIn-local', {  
+      failureRedirect: '/employersign' ,
+      successRedirect : '/',
+      failureFlash: true
+    })
+);
+
+
+// Employee Actions
 
 app.get('/employeecreate', function(req, res, next) {
     res.render('employeecreate',
@@ -153,7 +205,8 @@ app.get('/employeecreate', function(req, res, next) {
 app.post('/employeeRegistration', function(req, res, next) {
 
     req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
-    req.checkBody('rePassword', 'Confirm password is not match with password').equals(req.body.password);
+    req.checkBody('rePassword', 'Confirm password is too short. Minimum size is 8.').isLength({min:8});
+    req.checkBody('rePassword', 'Confirm password does not match with password').equals(req.body.password);
     var errors = req.validationErrors();
 
     console.log(errors);
@@ -170,10 +223,26 @@ app.post('/employeeRegistration', function(req, res, next) {
       employeeAction.findEmployeeName(req, res);
       // employeeAction.findEmployeeEmail(req, res);
     }
-      
-    
 });
 
+app.get('/employeesign', function(req, res, next) {
+    res.render('employeesign',
+    { 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+        });
+});
+
+app.post('/employeesign',
+    passport.authenticate('EmployeeSignIn-local', {  
+      failureRedirect: '/employeesign' ,
+      successRedirect : '/',
+      failureFlash: true
+    })
+);
+// app.post('/employeesign', function(req, res, next) {
+//   console.log('working');
+//   res.redirect('/employeesign');
+// });
 
 app.get('/aboutus', function(req, res, next) {
     res.render('aboutus',
@@ -227,8 +296,28 @@ app.post('/test', function(req, res, next) {
 });
 
 
+// Websocket working
+
+// var http = require('http').Server(app);
+var io = require('socket.io').listen(3080);
 
 
+app.get('/websocket', function(req, res){
+  res.render('websocket',
+    { 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+        });
+});
+
+io.on('connection', function(socket){
+    socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
+
+// http.listen(process.env.PORT || 3080, function(){
+//   console.log('listening on *:3080');
+// });
 
 
 app.get('/login', function(req, res, next) {

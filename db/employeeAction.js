@@ -24,7 +24,6 @@ db.query(queryName,function(err, result) {
     }
     
 });
-        
 };
 
 exports.findEmployeeEmail = function(req, res){
@@ -74,4 +73,40 @@ exports.addEmployee = function(req, res){
         }
     });
 
+};
+
+
+// Passport sign in
+
+
+exports.findByUsername = function(username, cb) {
+    console.log(username);
+  process.nextTick(function() {
+        console.log(username);
+        var queryName = 'SELECT * FROM employee WHERE username = "'+ username +'"';
+        db.query(queryName,function(err, result) {
+        console.log(result);
+      if (result[0] != undefined) {
+        return cb(null, result[0]);
+      }
+    
+    return cb(null, null);
+        });
+  });
+    };
+
+
+    exports.findById = function(id, cb) {
+    console.log(id);
+  process.nextTick(function() {
+    var queryName = 'SELECT * FROM employee WHERE id = "'+ id +'"';
+    db.query(queryName,function(err, result) {
+        console.log(result);
+      if (result[0] != undefined) {
+        return cb(null, result[0]);
+      }
+    
+    return cb(null, null);
+        });
+  });
 };

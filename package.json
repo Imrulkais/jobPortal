@@ -16,6 +16,7 @@
     "serve-favicon": "~2.3.0",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
-    "connect-ensure-login": "^0.1.1"
+    "connect-ensure-login": "^0.1.1",
+    "socket.io": "~1.7.1"
   }
 }
