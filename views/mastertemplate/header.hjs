@@ -22,7 +22,7 @@
 					<div class="logo">
 						<img src="logo/logo.png">	
 					</div>
-					<div class="signin" a href="Job Seeker Account.html">SIGN IN</a></div>	
+					<div class="signin" data-toggle="modal" data-target="#signIn">SIGN IN</div>	
 					<div class="creataccount" data-toggle="modal" data-target="#myModal"> CREATE ACCOUNT </div>
 
 
@@ -50,6 +50,27 @@
     </div>
   </div>
 
+  <div class="modal fade" id="signIn" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choose a category</h4>
+        </div>
+        <div class="modal-body">
+          <a href="/employersign"><button type="button" class="btn btn-success pull-left">Employer</button></a>
+          <a href="/employeesign"><button type="button" class="btn btn-success pull-right">Job seeker</button></a>
+<div class="clearfix"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 
 					<nav>
