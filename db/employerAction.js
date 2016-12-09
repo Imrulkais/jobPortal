@@ -27,6 +27,28 @@ exports.findEmployerEmail = function(req, res){
 
 };
 
+exports.findEmployerName = function(req, res){
+
+    var queryName = 'SELECT * FROM employer WHERE cName = "'+ req.body.cName +'"';
+    db.query(queryName,function(err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result[0]);
+            if(result[0] != undefined)
+            {
+                console.log("here is coming");
+                req.flash('cNameExist', 'The company name already exists');
+                res.redirect('/employercreate');
+            }
+            else
+                employerAction.findEmployercEmail(req, res);
+        }
+
+    });
+
+};
 
 
 
