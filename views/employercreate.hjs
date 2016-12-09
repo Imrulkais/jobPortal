@@ -3,10 +3,16 @@
 		<h2>Create Account</h2>
 		{{ messages.success }}
 		<h3 style="color: #768a28";>Account Information</h3>
+		            {{#messages.errors}}
+                            <div class="alert alert-danger">
+                                {{ msg }}
+                            </div>
+                    {{/messages.errors}}
             <form class="beforefooter" action="employerRegistration" method= "POST">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address<span class="help-inline red">*</span></label>
-                    <input type="email" name="aEmail" required class="form-control" id="exampleInputEmail1">
+                    <label for="exampleInputPassword1">Email address<span class="help-inline red">*</span></label>
+                    <input type="email" name="aEmail" required class="form-control" id="exampleInputPassword1">
+                    <span class="help-inline red">{{ messages.aEmail}}</span>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password<span class="help-inline red">*</span></label>
@@ -20,6 +26,7 @@
 				<div class="form-group">
                     <label for="exampleInputPassword1">Company Name<span class="help-inline red">*</span></label>
                     <input type="text" name="cName" required class="form-control" id="companyname">
+                    <span class="help-inline red">{{ messages.cNameExist}}</span>
                 </div>
 				<div class="form-group">
                     <label for="exampleInputPassword1">Contact Person Name<span class="help-inline red">*</span></label>
@@ -36,6 +43,7 @@
 				<div class="form-group">
                     <label for="exampleInputPassword1">Contact Person's Email<span class="help-inline red">*</span></label>
                     <input type="email" name="cPersonEmail" required class="form-control" id="ContactPerson'sEmail">
+                    <span class="help-inline red">{{ messages.cPersonEmail}}</span>
 				</div>
 				<p style="font-size: 10px";>N.B. During your job posting, the system will provide you option whether to display your Company's original name or any alternative name in your published job. If you don't want to show your company name then you can use your given alternative name like, 'A Leading Manufacturing Company' or 'A Leading Multinational Company' etc.</p>
 				<h3 style="color: #768a28";>Industry Type</h3>
@@ -57,6 +65,7 @@
 				<div class="form-group">
                     <label for="CompanyAddress">Email address<span class="help-inline red">*</span></label>
                     <input type="email" name="pEmail" required class="form-control" id="exampleInputEmail1">
+                    <span class="help-inline red">{{ messages.pEmail}}</span>
                 </div>
 				<div class="form-group">
 					<label for="sel1">Country<span class="help-inline red">*</span></label>
@@ -70,7 +79,7 @@
 				<div class="form-group">
                     <label for="Company Address">City<span class="help-inline red">*</span></label>
                     <input type="text" name="pCity" required class="form-control" id="City">
-                </div>				
+                </div>
 				<div class="form-group">
                     <label for="BillingAddress">Billing Address<span class="help-inline red">*</span></label>
                     <input type="text" name="pContactAddress" required class="form-control" id="BillingAddress">
@@ -90,5 +99,5 @@
 				</div>
 			</form>
 			</div>
-				
+
 				{{> footer}}
