@@ -1,12 +1,52 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../db');
+var employerAction = require('../db/employerAction');
 
-exports.addEmployer = function(usr){
+exports.findEmployerEmail = function(req, res){
+
+    var queryName = 'SELECT * FROM employer WHERE aEmail = "'+ req.body.aEmail +'"';
+
+    db.query(queryName,function(err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log('result is:'+ result[0]);
+            if(result[0] != undefined)
+            {
+                console.log("here is coming");
+                req.flash('aEmail', 'The email already exists');
+                res.redirect('/employercreate');
+            }
+            else
+                employerAction.findEmployerName(req, res);
+        }
+
+    });
+
+};
 
 
-	console.log(usr);
-    var details = {
+
+
+exports.addEmployer = function(req, res){
+
+    var usr = req.body;
+    var details = [];
+    var Description;
+    var VirtualAdress;
+    // if(!usr.bDescription){
+    //     Description = "";
+    // }
+    //else
+    //    Description = usr.bDescription;
+
+    Description = (usr.bDescription) ? usr.bDescription : "";
+    VirtualAdress = (usr.webAddress) ? usr.webAddress : "";
+
+    console.log(usr);
+    details = {
         aEmail: usr.aEmail,
         password: usr.password,
         cName: usr.cName,
@@ -15,54 +55,24 @@ exports.addEmployer = function(usr){
         cPersonMobile: usr.cPersonMobile,
         cPersonEmail: usr.cPersonEmail,
         industryType: usr.industryType,
-        bDescription: usr.bDescription,
+        bDescription: Description,
         pEmail: usr.pEmail,
         pCountry: usr.pCountry,
         pCity: usr.pCity,
         pContactAddress: usr.pContactAddress,
         pContactPhone: usr.pContactPhone,
-        webAddress: usr.webAddress,
+        webAddress: VirtualAdress,
         policy: usr.policy
     };
     db.query('INSERT into  `employer` SET ?', details, function (err, result) {
         if (err)
             throw err;
-        console.log(' The value inserted. ');
+        else{
+            console.log(' The value inserted. ');
+            req.flash('success', 'Your registration has been successfully completed.');
+            res.redirect('/employercreate');
+        }
+
     });
 
-};
-
-// Passport sign in
-
-
-exports.findByEmail = function(email, cb) {
-    console.log(email);
-  process.nextTick(function() {
-        console.log(email);
-        var queryName = 'SELECT * FROM employer WHERE aEmail = "'+ email +'"';
-        db.query(queryName,function(err, result) {
-        console.log(result);
-      if (result[0] != undefined) {
-        return cb(null, result[0]);
-      }
-    
-    return cb(null, null);
-        });
-  });
-    };
-
-
-    exports.findById = function(id, cb) {
-    console.log(id);
-  process.nextTick(function() {
-    var queryName = 'SELECT * FROM employer WHERE id = "'+ id +'"';
-    db.query(queryName,function(err, result) {
-        console.log(result);
-      if (result[0] != undefined) {
-        return cb(null, result[0]);
-      }
-    
-    return cb(null, null);
-        });
-  });
 };
