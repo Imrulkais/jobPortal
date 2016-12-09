@@ -22,7 +22,7 @@
 					<div class="logo">
 						<img src="logo/logo.png">	
 					</div>
-          {{ login }}
+         
 					<div class="signin" data-toggle="modal" data-target="#signIn">SIGN IN</div>	
 
 					<div class="creataccount" data-toggle="modal" data-target="#myModal"> CREATE ACCOUNT </div>

@@ -242,13 +242,8 @@ app.post('/employeesign',
     })
 );
 
-app.use(function (req, res, next) {
-  res.EmployerSignIn-local.login = req.isAuthenticated();
-  next();
-});
-
 app.get('/logout', function(req, res){
-  console.log('logging out');
+  console.log(req.user);
   req.logout();
   res.redirect('/');
 });
