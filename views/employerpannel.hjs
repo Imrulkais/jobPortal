@@ -1,0 +1,84 @@
+{{> header}}
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Employer Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="#"><a href="/postnewjobs">Post a Job</a></li>
+      <li><a href="#">Communication</a></li>
+      <li class="#"><a href="/postedjob">Posted Job</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"> Help</a></li>
+	        <li style="max-width:150px;" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Account Options <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Payment Status</a></li>
+          <li><a href="#">Edit Account</a></li>
+          <li><a href="#">Change Password</a></li>
+		  <li class="divider"></li>
+          <li><a href="#">Support</a></li>
+          <li class="divider"></li>
+		  <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</body>
+</html>
+
+
+    <!-- Main wrapper -->
+<div class="container">
+	<div class="col-md-4">
+        <a href="/postnewjobs" class="btn btn-default post-job-btn">Post a New Job</a>
+	</div>
+	<div class="col-md-8">
+        <div class="job-view pull-right">
+            <label id="TTPPRecHeader"> Jobs per page:</label>
+                <span id="TTPPRec">
+                 <select name="" id="" class="form-control" onchange="setPerpageRecord('j', this.value)">
+                    <option selected value="5">5</option>
+                    <option  value="10">10</option>
+                    <option  value="20">20</option>
+                 </select>
+                </span>
+        </div>
+    </div>
+</div>
+
+    <div class="container tab">
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                        <li role="presentation" class="active"><a href="#latest" onclick="setReloadJobBoard(1, 'j')" aria-controls="latest" role="tab" data-toggle="tab">Posted Job (<span id="LJA">0</span>)</a></li>
+                        <li role="presentation" class="hidden-xs"><a href="#drafted" onclick="setReloadJobBoard(1, 'd')" aria-controls="drafted" role="tab" data-toggle="tab">Drafted Job (<span id="DJA">0</span>)</a></li>
+                        <li role="presentation" class="hidden-xs"><a href="#drafted" onclick="setReloadJobBoard(1, 'a')" aria-controls="drafted" role="tab" data-toggle="tab">Archived Job (<span id="AJA">0</span>)</a></li>
+                    </ul>
+				</div>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="">
+					<div class="panel panel-default">
+					<!-- Default panel contents -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="not-found text-center">
+						<i class="icon-not-found"></i>
+						<h1>Sorry, We could not find any job.</h1>
+					</div>
+				</div>
+			</div>
+					</div>
+				</div>
+			</div>
+			</div>
+                <input type="hidden" name="hidPgType" id="hidPgType" value="" />
+                <input type="hidden" name="hidPgNo" id="hidPgNo" value="" />
+		</div>
+     </div>
+{{> footer}}
