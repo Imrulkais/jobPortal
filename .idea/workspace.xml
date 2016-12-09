@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ae7d2d1-4e28-4f51-9331-13a731595c62" name="Default" comment="" />
+    <list default="true" id="1ae7d2d1-4e28-4f51-9331-13a731595c62" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/postjobAction.js" afterPath="$PROJECT_DIR$/db/postjobAction.js" />
+    </list>
     <ignored path="jobPortal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -56,8 +58,8 @@
       <file leaf-file-name="postjobAction.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/postjobAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="572">
+              <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -259,12 +261,12 @@
       <workItem from="1481280086049" duration="5123000" />
       <workItem from="1481288056844" duration="1475000" />
       <workItem from="1481290333057" duration="234000" />
-      <workItem from="1481290604695" duration="471000" />
+      <workItem from="1481290604695" duration="621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10825000" />
+    <option name="totallyTimeSpent" value="10975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -565,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/postjobAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="572">
+          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
           <folding />
         </state>
       </provider>
