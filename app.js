@@ -173,9 +173,26 @@ app.get('/employercreate', function(req, res, next) {
 
 app.post('/employerRegistration', function(req, res, next) {
 
-    employerAction.addEmployer(req.body);
-  req.flash('success', 'You have been signed up');
-  res.redirect('/employercreate');
+    req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
+    req.checkBody('confirmPassword', 'Confirm password does not match with password').equals(req.body.password);
+    var errors = req.validationErrors();
+
+    console.log(errors);
+    if (errors) {
+
+        console.log(req.body);
+        // req.flash( 'formdata',req.body); // load form data into flash
+        req.flash('errors', errors);
+        res.redirect('/employercreate');
+        // return done(null, false, req.flash('formdata', req.body));
+    }
+    else
+    {
+        employerAction.findEmployerEmail(req, res);
+        // employerAction.findEmployerEmail(req, res);
+    }
+
+
 });
 
 
