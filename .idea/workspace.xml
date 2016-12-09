@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ae7d2d1-4e28-4f51-9331-13a731595c62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/employercreate.hjs" afterPath="$PROJECT_DIR$/views/employercreate.hjs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jobPortal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,24 +28,24 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+            <state relative-caret-position="225">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employerAction.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="employerAction.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/employerAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1985">
-              <caret line="145" column="2" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
+            <state relative-caret-position="125">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employercreate.hjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="employercreate.hjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/employercreate.hjs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
@@ -65,6 +65,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="employeeAction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/employeeAction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1947">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -79,9 +89,9 @@
         <option value="$PROJECT_DIR$/views/traning.hjs" />
         <option value="$PROJECT_DIR$/views/mastertemplate/footer.hjs" />
         <option value="$PROJECT_DIR$/views/index.hjs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/db/employerAction.js" />
         <option value="$PROJECT_DIR$/views/employercreate.hjs" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -257,12 +267,12 @@
       <workItem from="1480689031840" duration="96000" />
       <workItem from="1480689869890" duration="88000" />
       <workItem from="1480851301055" duration="3338000" />
-      <workItem from="1481280086049" duration="3039000" />
+      <workItem from="1481280086049" duration="5123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6561000" />
+    <option name="totallyTimeSpent" value="8645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -431,14 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/employeeAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mastertemplate/header.hjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1450">
@@ -488,22 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/employerAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1985">
-          <caret line="145" column="2" selection-start-line="145" selection-start-column="2" selection-end-line="145" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/employeecreate.hjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
@@ -516,6 +502,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.hjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/employeeAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1947">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/employerAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding />
         </state>
       </provider>
