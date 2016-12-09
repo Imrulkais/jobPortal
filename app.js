@@ -63,6 +63,8 @@ passport.use('EmployerSignIn-local',new LocalStrategy({
       });
     }));
 
+
+
 // passport.use('employeeSignIn', new LocalStrategy({
 //       usernameField: 'username',
 //       passwordField: 'password' // this is the virtual field on the model
@@ -239,6 +241,17 @@ app.post('/employeesign',
       failureFlash: true
     })
 );
+
+app.use(function (req, res, next) {
+  res.EmployerSignIn-local.login = req.isAuthenticated();
+  next();
+});
+
+app.get('/logout', function(req, res){
+  console.log('logging out');
+  req.logout();
+  res.redirect('/');
+});
 // app.post('/employeesign', function(req, res, next) {
 //   console.log('working');
 //   res.redirect('/employeesign');
