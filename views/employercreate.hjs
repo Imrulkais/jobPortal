@@ -17,6 +17,7 @@
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password<span class="help-inline red">*</span></label>
                     <input type="password" name="password" required class="form-control" id="exampleInputPassword1">
+                    <p class="help-block">Use at least 8 to 12 characters.</p>
                 </div>
 				<div class="form-group">
                     <label for="exampleInputPassword1">Confirm Password<span class="help-inline red">*</span></label>
