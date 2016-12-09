@@ -18,6 +18,7 @@ var database = require('./db');
 var action = require('./db/action');
 var employerAction = require('./db/employerAction');
 var employeeAction = require('./db/employeeAction');
+var postjobAction = require('./db/postjobAction');
 
 //Configuring flash
 var flash = require('express-flash');
@@ -192,9 +193,7 @@ app.post('/employerRegistration', function(req, res, next) {
         // employerAction.findEmployerEmail(req, res);
     }
 
-
 });
-
 
 app.get('/employersign', function(req, res, next) {
     res.render('employersign',
@@ -211,6 +210,60 @@ app.post('/employersign',
     })
 );
 
+// Employer pannel Action
+
+app.get('/employerpannel', function(req, res, next) {
+    res.render('employerpannel',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+        });
+});
+
+app.get('/postnewjobs', function(req, res, next) {
+    res.render('postnewjobs',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+        });
+});
+
+app.post('/postjobs', function(req, res, next) {
+
+
+    if(req.body.txtTotalVacancy <= 0){
+        req.flash('vacancy', 'Number of vacancy should be minimum 1');
+        res.redirect('/postnewjobs');
+    }
+    else {
+        req.checkBody('txtTotalVacancy', 'Number of vacancy can not be letter.').isInt();
+        /*req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
+         req.checkBody('rePassword', 'Confirm password does not match with password').equals(req.body.password);
+         var errors = req.validationErrors();
+         */
+        var errors = req.validationErrors();
+
+        console.log(errors);
+        if (errors) {
+
+            console.log(req.body);
+            // req.flash( 'formdata',req.body); // load form data into flash
+            req.flash('errors', errors);
+            res.redirect('/postnewjobs');
+            // return done(null, false, req.flash('formdata', req.body));
+        }
+        else {
+            postjobAction.addJob(req, res);
+            // postjobs.addJob(req, res);
+        }
+    }
+
+});
+
+app.get('/postedjob', function(req, res, next) {
+    res.render('postedjob',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+        });
+});
 
 // Employee Actions
 
