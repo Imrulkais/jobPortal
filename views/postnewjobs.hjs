@@ -1,0 +1,102 @@
+{{> header}}
+<div class="New-job">
+     <h3 style="color: #768a28";>Post New Job Ads</h3>
+         {{#messages.errors}}
+           <div class="alert alert-danger"> {{ msg }}  </div>
+             {{/messages.errors}}
+
+             {{messages.success}}
+
+                 <form class="beforefooter" action="postjobs" method= "POST">
+
+
+			<div class> Fields marked by <span class="help-inline red">*</span> are mandatory</div>
+	<table class="table table-bordered table-striped twrap responsive-table">
+	<tbody>
+
+<!--COMPANY NAME-->
+	<tr><td> Company Name <span class="help-inline red">*</span> </td>
+		<td><input type="text" required name="txtCompanyName" id="txtCompanyName" placeholder="Company Name" class="form-control input-sm" style="width:82%;" maxlength="100" value=""/></td>
+		</tr>
+
+<!--JOB CARAGORY-->
+		<tr><td width="32%"> Job Category<span class="help-inline red">*</span></td>
+			<td width="68%">
+			<select name="cboJobCategory" id="cboJobCategory" style="width:82%" class="form-control input-sm">
+			<option value='1'>Accounting/Finance</option>
+			<option value='2'>Engineering</option>
+			<option value='3'>Commercial</option>
+			<option value='4'>Others</option>
+			</select>
+			</td>
+		</tr>
+<!-- Industry Type-->
+	<tr><td width="32%">Company Industry Type
+			<span class="help-inline red">*</span><br/>
+			<span style="font-size:11px"> This recruitment is for selected insdustry type </span>
+		</td>
+		<td width="68%" id="divindustrytype" class="form-inline">
+			<select required name="cboJobIndustryType" id="cboJobIndustryType" style="width:65%" class="form-control input-sm">
+			<option value="1" >IT/Communication</option>
+			<option value="2" >Accounting</option>
+			<option value="3" >Bank</option>
+			<option value="4" >Commercial</option>
+			</select>
+		</td>
+	</tr>
+<!--JOB TITLE:-->
+	<tr><td> Job Title <span class="help-inline red">*</span> </td>
+		<td><input type="text" required name="txtJobTitle" id="txtJobTitle" placeholder="Job Title" class="form-control input-sm" style="width:82%;" maxlength="100" value=""/></td>
+		</tr>
+<!--NO. OF VACANCIES:-->
+	<tr><td>No. of Vacancies<span class="help-inline red">*</span></td>
+	<td><input name="txtTotalVacancy" type="text" required placeholder="Number of Vacancies" class="form-control input-sm" id="txtTotalVacancy" style="width:82%;" value="" maxlength="50"/></td>
+
+	</tr>
+	<span class="help-inline red">{{ messages.vacancy}}</span>
+
+<!--JOB DETAILS-->
+	<tr>
+		<td>Job Details<span class="help-inline red">*</span></td>
+	<td>
+		<textarea name="txtJobDetails" id="txtJobDetails" placeholder="Job Details" required class="form-control input-sm" style="width:100%;" rows="4"></textarea>
+	</td>
+	</tr>
+
+
+<!--APPLY INSTRUCTIONS-->
+    	<tr>
+    		<td>Apply Instruction(s)<span class="help-inline red">*</span></td>
+    	<td>
+    		<textarea name="txtApplyInstruction" id="txtApplyInstruction" placeholder="Apply Instruction (s)" required class="form-control input-sm" style="width:100%;" rows="4"></textarea>
+    	</td>
+    	</tr>
+<!--APPLICATION DEADLINE-->
+	<tr>
+		<td>Application Deadline<span class="help-inline red">*</span></td>
+	<td class="form-inline">
+		<input style="width: 65%;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);border:  1px solid #ccc;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;" placeholder="Application Deadline" class="input-sm" required name="txtDeadlineNew" size="8" type="text" id="txtDeadlineNew" value="" />
+		<br />
+		<span style="font-size:11px">[Deadline must be within 30 days from now.]</span>
+	</td>
+	</tr>
+<!--BILLING CONTACT-->
+	<tr>
+		<td>Billing Contact<span class="help-inline red">*</span>
+		<td>
+			<textarea name="txtBillingContact" id="txtBillingContact" placeholder="Billing Contact" required class="form-control input-sm" style="width:100%;" rows="4"></textarea>
+		</td>
+		</td>
+		<td class="form-inline"> </td>
+	</tr>
+
+	</tbody>
+</table>
+
+<div style="text-align:center;">
+<button type="submit" class="btn btn-success" value="Continue">Continue</button>
+</div>
+
+</div>
+
+{{> footer}}
