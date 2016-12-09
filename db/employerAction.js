@@ -50,6 +50,29 @@ exports.findEmployerName = function(req, res){
 
 };
 
+exports.findEmployercEmail = function(req, res){
+
+    var queryName = 'SELECT * FROM employer WHERE cPersonEmail = "'+ req.body.cPersonEmail +'"';
+    db.query(queryName,function(err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(result[0]);
+            if(result[0] != undefined)
+            {
+                console.log("here is coming");
+                req.flash('cPersonEmail', 'The email already exists');
+                res.redirect('/employercreate');
+            }
+            else
+                employerAction.findEmployerpEmail(req, res);
+        }
+
+    });
+
+};
+
 
 
 exports.addEmployer = function(req, res){
