@@ -100,7 +100,6 @@ if (user.fname) {
     if (err) { return cb(err); }
     cb(null, user);
   });
-
   }
 if (user.aEmail) {
     // serialize user
@@ -109,7 +108,6 @@ if (user.aEmail) {
     cb(null, user);
   });
 }
-
 });
 var app = express();
 
@@ -151,14 +149,16 @@ app.use(passport.session());
 app.get('/', function(req, res, next) {
     res.render('index',
     { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} ,
+            user : req.user
         });
 });
 
 app.get('/traning', function(req, res, next) {
     res.render('traning',
         {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : req.user
         });
 });
 
@@ -167,7 +167,8 @@ app.get('/traning', function(req, res, next) {
 app.get('/employercreate', function(req, res, next) {
     res.render('employercreate',
         {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : req.user
         });
 });
 
@@ -215,14 +216,16 @@ app.post('/employersign',
 app.get('/employerpannel', function(req, res, next) {
     res.render('employerpannel',
         {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : req.user
         });
 });
 
 app.get('/postnewjobs', function(req, res, next) {
     res.render('postnewjobs',
         {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : req.user
         });
 });
 
@@ -261,7 +264,8 @@ app.post('/postjobs', function(req, res, next) {
 app.get('/postedjob', function(req, res, next) {
     res.render('postedjob',
         {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'}
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : req.user
         });
 });
 
@@ -305,12 +309,17 @@ app.get('/employeesign', function(req, res, next) {
 });
 
 app.post('/employeesign',
-    passport.authenticate('EmployeeSignIn-local', {  
+    passport.authenticate('EmployeeSignIn-local',{ 
       failureRedirect: '/employeesign' ,
-      successRedirect : '/',
+      successRedirect: '/',
       failureFlash: true
     })
 );
+app.use(function (req, res, next) {
+  res.locals.login = req.isAuthenticated();
+  console.log("value is:" +res.locals.login);
+  next();
+});
 
 app.get('/logout', function(req, res){
   console.log(req.user);
@@ -325,14 +334,16 @@ app.get('/logout', function(req, res){
 app.get('/aboutus', function(req, res, next) {
     res.render('aboutus',
     { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} ,
+            user : req.user
         });
 });
 
 app.get('/contactus', function(req, res, next) {
     res.render('contactus',
     { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} ,
+            user : req.user
         });
 });
 

@@ -13,6 +13,7 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="/bootstrap/js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <div class="container">
@@ -22,9 +23,10 @@
 					<div class="logo">
 						<img src="logo/logo.png">	
 					</div>
-         
+         <h4>Here is something:</h4> {{ user.username }}
+         {{^user.username }}
 					<div class="signin" data-toggle="modal" data-target="#signIn">SIGN IN</div>	
-
+          {{/ user.username }}
 					<div class="creataccount" data-toggle="modal" data-target="#myModal"> CREATE ACCOUNT </div>
 
 
