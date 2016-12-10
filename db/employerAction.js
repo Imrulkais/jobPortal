@@ -144,3 +144,38 @@ exports.addEmployer = function(req, res){
     });
 
 };
+
+// Passport sign in
+
+
+exports.findByEmail = function(email, cb) {
+    console.log(email);
+  process.nextTick(function() {
+        console.log(email);
+        var queryName = 'SELECT * FROM employer WHERE aEmail = "'+ email +'"';
+        db.query(queryName,function(err, result) {
+        console.log(result);
+      if (result[0] != undefined) {
+        return cb(null, result[0]);
+      }
+    
+    return cb(null, null);
+        });
+  });
+    };
+
+
+    exports.findById = function(id, cb) {
+    console.log(id);
+  process.nextTick(function() {
+    var queryName = 'SELECT * FROM employer WHERE id = "'+ id +'"';
+    db.query(queryName,function(err, result) {
+        console.log(result);
+      if (result[0] != undefined) {
+        return cb(null, result[0]);
+      }
+    
+    return cb(null, null);
+        });
+  });
+};
