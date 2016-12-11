@@ -75,7 +75,7 @@
 	<tr>
 		<td>Application Deadline<span class="help-inline red">*</span></td>
 	<td class="form-inline">
-		<input style="width: 65%;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);border:  1px solid #ccc;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;" placeholder="Application Deadline" class="input-sm" required name="txtDeadlineNew" size="8" type="text" id="txtDeadlineNew" value="" />
+		<input style="width: 65%;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);border:  1px solid #ccc;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;" placeholder="Application Deadline" class="input-sm" required name="txtDeadlineNew" size="8" type="date" id="txtDeadlineNew" value="" />
 		<br />
 		<span style="font-size:11px">[Deadline must be within 30 days from now.]</span>
 	</td>
@@ -87,7 +87,6 @@
 			<textarea name="txtBillingContact" id="txtBillingContact" placeholder="Billing Contact" required class="form-control input-sm" style="width:100%;" rows="4"></textarea>
 		</td>
 		</td>
-		<td class="form-inline"> </td>
 	</tr>
 
 	</tbody>

@@ -1,67 +1,35 @@
+
+
 {{> header}}
 
+{{#jobs}}
+	<div class="row">
+        <div class="col-md-4">
+            <h2>Company Name:</h2>
+        </div>
+        <div class="col-md-8">
+        	{{.companyname}}
+        </div>
+        <div class="col-md-4">
+            <h5>Job title:</h5>
+        </div>
+        <div class="col-md-8">
+        	{{jobtitle}}
+        </div>
+        <div class="col-md-4">
+            <h5>Number of vacancies:</h5>
+        </div>
+        <div class="col-md-8">
+        	{{noofvacancies}}
+        </div>
+        <div class="col-md-4">
+            <h5>Deadline:</h5>
+        </div>
+        <div class="col-md-8">
+            {{applicationdeadline}}
+        </div>
+	</div>
 
-<div class="container">
-  <h2>Job Details</h2>
-  <table class="table table-bordered table-hover fixed">
-    <col width="30px" /> <col width="40px" />
-    <tbody>
-      <tr>
-        <td>Company Name</td>
-        <td>Kiel University of Applied Science, Kiel</td>
-      </tr>
-      <br> </br>
-      <tr>
-        <td>Job Category</td>
-        <td>Engineering</td>
-      </tr>
-      <tr>
-        <td>Company Industry Type </td>
-        <td>Bank</td>
-      </tr>
-	  <tr>
-        <td>Job Title </td>
-        <td>Electrical Engineer</td>
-      </tr>
-	  <tr>
-        <td>No. of Vacancies</td>
-        <td>10</td>
-      </tr>
-	  <tr>
-        <td>Job Details</td>
-        <td><p class="text-justify">Age At least 30 year(s)
-		The candidate should have minimum 5-7 years practical experience at any reputed manufacturing company on the following field:
-		Ensure all electrical equipments are operational and maintained as per the standards.
-		To plan layout of Electrical Plants & Drawings
-		To prepare specification for purchase of material and equipment.
-		Assist in developing capital project program for new equipment.
-		To plan repair and maintenance work.
-		Compile data and write reports regarding existing project Sound knowledge regarding assemble, 
-		install, test and maintain electrical equipment, appliances, apparatus and fixtures.
-		Inspect electrical system, equipment and components to identify hazards defects and the need for adjustment 
-		or repair and to ensure compliance with cores. must have basic computer knowledge.</p>
-		</td>
-      </tr>
-	  <tr>
-        <td>Apply Instruction(s)</td>
-        <td><p class="text-justify">Send your CV to careerhakkanigroup@gmail.com.
-		The candidates meeting the above mentioned criteria are requested to send their complete resume with 
-		2 recent passport size photographs, attested copies of academic and experiences certificate to the Managing 
-		Director of the bellow address by 31st December' 2016.
-		Please mention the position applied for on the top of the envelope. </p>
-		</td>
-      </tr>
-	  <tr>
-        <td>Application Deadline</td>
-        <td>December 31, 2016</td>
-      </tr>
-	  <tr>
-        <td>Company Address</td>
-        <td>Head of HR & Admin, 
-		House # 02, Road # 23/C, Gulshan-1, Dhaka. </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+{{/jobs}}
 
 {{> footer}}

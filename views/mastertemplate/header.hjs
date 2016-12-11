@@ -24,11 +24,14 @@
 						<img src="logo/logo.png">	
 					</div>
          <h4>Here is something:</h4> {{ user.username }}
-         {{^user.username }}
+         {{^ user}}
 					<div class="signin" data-toggle="modal" data-target="#signIn">SIGN IN</div>	
-          {{/ user.username }}
+          
 					<div class="creataccount" data-toggle="modal" data-target="#myModal"> CREATE ACCOUNT </div>
-
+          {{/ user}}
+          {{# user}}
+          <a href="logout"><div class="signin">Logout</div></a>
+          {{/ user}}
 
 
 <!-- Modal -->
@@ -94,3 +97,61 @@
 					</div>
 
                 </div>
+
+{{#user.username}}
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Employee Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="#"><a href="/postnewjobs">Post a Job</a></li>
+      <li><a href="#">Communication</a></li>
+      <li class="#"><a href="/postedjob">Posted Job</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"> Help</a></li>
+          <li style="max-width:150px;" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Account Options <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Payment Status</a></li>
+          <li><a href="#">Edit Account</a></li>
+          <li><a href="#">Change Password</a></li>
+      <li class="divider"></li>
+          <li><a href="#">Support</a></li>
+          <li class="divider"></li>
+      <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{{/user.username}}
+
+{{#user.aEmail}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Employer Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="#"><a href="/postnewjobs">Post a Job</a></li>
+      <li><a href="singlejob">Single job</a></li>
+      <li class="#"><a href="postedjob">Posted Job</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"> Help</a></li>
+          <li style="max-width:150px;" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Account Options <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Payment Status</a></li>
+          <li><a href="#">Edit Account</a></li>
+          <li><a href="#">Change Password</a></li>
+      <li class="divider"></li>
+          <li><a href="#">Support</a></li>
+          <li class="divider"></li>
+      <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{{/user.aEmail}}

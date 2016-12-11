@@ -64,23 +64,6 @@ passport.use('EmployerSignIn-local',new LocalStrategy({
       });
     }));
 
-
-
-// passport.use('employeeSignIn', new LocalStrategy({
-//       usernameField: 'username',
-//       passwordField: 'password' // this is the virtual field on the model
-//     },
-
-//     function(username, password, cb) {
-//       console.log("coming");
-//       employeeAction.findByUsername(username, function(err, user) {
-//         if (err) { console.log('finding username');return cb(err); }
-//         if (!user) { return cb(null, false); }
-//         if (user.password != password) { return cb(null, false); }
-//         return cb(null, user);
-//       });
-//     }));
-
 // Configure Passport authenticated session persistence.
 //
 // In order to restore authentication state across HTTP requests, Passport needs
@@ -221,7 +204,7 @@ app.get('/employerpannel', function(req, res, next) {
         });
 });
 
-app.get('/postnewjobs', function(req, res, next) {
+app.get('/postnewjobs', isEmployeerAuthenticated,function(req, res, next) {
     res.render('postnewjobs',
         {
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
@@ -229,7 +212,7 @@ app.get('/postnewjobs', function(req, res, next) {
         });
 });
 
-app.post('/postjobs', function(req, res, next) {
+app.post('/postjobs', isEmployeerAuthenticated, function(req, res, next) {
 
 
     if(req.body.txtTotalVacancy <= 0){
@@ -238,10 +221,6 @@ app.post('/postjobs', function(req, res, next) {
     }
     else {
         req.checkBody('txtTotalVacancy', 'Number of vacancy can not be letter.').isInt();
-        /*req.checkBody('password', 'Password is too short. Minimum size is 8.').notEmpty().isLength({min:8});
-         req.checkBody('rePassword', 'Confirm password does not match with password').equals(req.body.password);
-         var errors = req.validationErrors();
-         */
         var errors = req.validationErrors();
 
         console.log(errors);
@@ -254,20 +233,50 @@ app.post('/postjobs', function(req, res, next) {
             // return done(null, false, req.flash('formdata', req.body));
         }
         else {
-            postjobAction.addJob(req, res);
+            postjobAction.addJob(req, res, req.user.id );
             // postjobs.addJob(req, res);
         }
     }
 
 });
 
-app.get('/postedjob', function(req, res, next) {
-    res.render('postedjob',
+app.get('/singlejob', function(req, res, next) {
+    res.render('singlejob',
         {
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
             user : req.user
         });
 });
+
+app.get('/postedjob',isEmployeerAuthenticated, function(req, res, next) {
+    postjobAction.postedJobs(req, res, req.user.id);
+
+    // var result = database.query('SELECT * FROM postnewjob WHERE employeerId = "'+ req.user.id +'"');
+    // db.query(queryName,function(err, result) {
+    // if (err) {
+    //     console.log(err);
+    // }
+    // else {
+        
+        // res.render('postedjob',
+        // {
+        //     partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+        //     jobs : result
+        // });
+
+
+        // req.flash('jobs', result);
+        //     res.redirect('/postnewjobs');
+  //   }
+  // });
+
+});
+
+function isEmployeerAuthenticated(req, res, next) {
+    if (req.user.aEmail)
+        return next();
+    res.redirect('/');
+}
 
 // Employee Actions
 
@@ -315,11 +324,6 @@ app.post('/employeesign',
       failureFlash: true
     })
 );
-app.use(function (req, res, next) {
-  res.locals.login = req.isAuthenticated();
-  console.log("value is:" +res.locals.login);
-  next();
-});
 
 app.get('/logout', function(req, res){
   console.log(req.user);
