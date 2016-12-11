@@ -10,13 +10,6 @@ var postjobAction = require('../db/postjobAction');
 
 
 
-var path = require('path');
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hjs');
-
 
 
 exports.addJob = function(req, res, id ){
@@ -49,9 +42,10 @@ exports.addJob = function(req, res, id ){
 
 };
 
-exports.postedJobs = function(req, res, id ){
+exports.postedJobs = function(req, res, user ){
 
-    var queryName = 'SELECT * FROM postnewjob WHERE employeerId = "'+ id +'"';
+console.log("coming here now");
+    var queryName = 'SELECT * FROM postnewjob WHERE employeerId = "'+ user.id +'"';
     db.query(queryName,function(err, result) {
     if (err) {
         console.log(err);
@@ -61,6 +55,7 @@ exports.postedJobs = function(req, res, id ){
         res.render('postedjob',
         {
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : user,
             jobs : result
         });
 
@@ -71,16 +66,3 @@ exports.postedJobs = function(req, res, id ){
 });
 
 }
-
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-
-module.exports = app;

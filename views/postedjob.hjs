@@ -3,33 +3,29 @@
 {{> header}}
 
 {{#jobs}}
-	<div class="row">
-        <div class="col-md-4">
-            <h2>Company Name:</h2>
-        </div>
-        <div class="col-md-8">
-        	{{.companyname}}
-        </div>
-        <div class="col-md-4">
-            <h5>Job title:</h5>
-        </div>
-        <div class="col-md-8">
-        	{{jobtitle}}
-        </div>
-        <div class="col-md-4">
-            <h5>Number of vacancies:</h5>
-        </div>
-        <div class="col-md-8">
-        	{{noofvacancies}}
-        </div>
-        <div class="col-md-4">
-            <h5>Deadline:</h5>
-        </div>
-        <div class="col-md-8">
-            {{applicationdeadline}}
-        </div>
-	</div>
 
+<div class="row">
+<table class="table borderless">
+  <tbody>
+	  <tr>
+	      <td>Company Name:</td>
+	      <td>{{companyname}}</td>
+	  </tr>
+	  <tr>
+	      <td>Job title:</td>
+	      <td>{{jobtitle}}</td>
+	  </tr>
+	  <tr>
+	      <td>Number of vacancies:</td>
+	      <td>{{noofvacancies}}</td>
+	  </tr>
+	  <tr>
+	      <td>Deadline:</td>
+	      <td>{{applicationdeadline}}</td>
+	  </tr>
+  </tbody>
+</table>
+</div>
 {{/jobs}}
 
 {{> footer}}

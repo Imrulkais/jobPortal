@@ -350,3 +350,6 @@ h4{
 }
 
 .red{color: red;}
+
+.borderless tr, .borderless td, .borderless th {border:none !important;}
+.borderless{ background-color: ECEBE6; margin:10px 0px;border-radius: 5px;}

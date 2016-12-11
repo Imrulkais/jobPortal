@@ -248,28 +248,8 @@ app.get('/singlejob', function(req, res, next) {
         });
 });
 
-app.get('/postedjob',isEmployeerAuthenticated, function(req, res, next) {
-    postjobAction.postedJobs(req, res, req.user.id);
-
-    // var result = database.query('SELECT * FROM postnewjob WHERE employeerId = "'+ req.user.id +'"');
-    // db.query(queryName,function(err, result) {
-    // if (err) {
-    //     console.log(err);
-    // }
-    // else {
-        
-        // res.render('postedjob',
-        // {
-        //     partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
-        //     jobs : result
-        // });
-
-
-        // req.flash('jobs', result);
-        //     res.redirect('/postnewjobs');
-  //   }
-  // });
-
+app.get('/postedjob',isEmployeerAuthenticated, function(req, res) {
+    postjobAction.postedJobs(req, res, req.user);
 });
 
 function isEmployeerAuthenticated(req, res, next) {
