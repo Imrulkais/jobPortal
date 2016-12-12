@@ -18,7 +18,6 @@ exports.addJob = function(req, res, id ){
     console.log(usr);
     var details = {
         companyname: usr.txtCompanyName,
-        jobcategory: usr.cboJobCategory,
         companyindustrytype: usr.cboJobIndustryType,
         jobtitle: usr.txtJobTitle,
         noofvacancies: usr.txtTotalVacancy,

@@ -19,6 +19,7 @@ var action = require('./db/action');
 var employerAction = require('./db/employerAction');
 var employeeAction = require('./db/employeeAction');
 var postjobAction = require('./db/postjobAction');
+var generalAction = require('./db/generalAction');
 
 //Configuring flash
 var flash = require('express-flash');
@@ -240,16 +241,23 @@ app.post('/postjobs', isEmployeerAuthenticated, function(req, res, next) {
 
 });
 
-app.get('/singlejob', function(req, res, next) {
-    res.render('singlejob',
-        {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
-            user : req.user
-        });
-});
+// app.get('/singlejob', function(req, res, next) {
+//     res.render('singlejob',
+//         {
+//             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+//             user : req.user
+//         });
+// });
 
 app.get('/postedjob',isEmployeerAuthenticated, function(req, res) {
     postjobAction.postedJobs(req, res, req.user);
+});
+
+app.get('/singleJobDetails', function(req, res, next) {
+    // Id = req.params.id;
+    Id = req.query.id;
+    console.log("query id =" + Id);
+    generalAction.singleJobs(req, res, Id);
 });
 
 function isEmployeerAuthenticated(req, res, next) {

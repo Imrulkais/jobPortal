@@ -19,17 +19,6 @@
 		<td><input type="text" required name="txtCompanyName" id="txtCompanyName" placeholder="Company Name" class="form-control input-sm" style="width:82%;" maxlength="100" value=""/></td>
 		</tr>
 
-<!--JOB CARAGORY-->
-		<tr><td width="32%"> Job Category<span class="help-inline red">*</span></td>
-			<td width="68%">
-			<select name="cboJobCategory" id="cboJobCategory" style="width:82%" class="form-control input-sm">
-			<option value='1'>Accounting/Finance</option>
-			<option value='2'>Engineering</option>
-			<option value='3'>Commercial</option>
-			<option value='4'>Others</option>
-			</select>
-			</td>
-		</tr>
 <!-- Industry Type-->
 	<tr><td width="32%">Company Industry Type
 			<span class="help-inline red">*</span><br/>
@@ -92,8 +81,8 @@
 	</tbody>
 </table>
 
-<div style="text-align:center;">
-<button type="submit" class="btn btn-success" value="Continue">Continue</button>
+<div>
+<button type="submit" class="btn btn-success" value="Continue">Submit</button>
 </div>
 
 </div>

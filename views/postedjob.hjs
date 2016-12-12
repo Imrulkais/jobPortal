@@ -2,9 +2,10 @@
 
 {{> header}}
 
-{{#jobs}}
+
 
 <div class="row">
+{{#jobs}}
 <table class="table borderless">
   <tbody>
 	  <tr>
@@ -13,7 +14,7 @@
 	  </tr>
 	  <tr>
 	      <td>Job title:</td>
-	      <td>{{jobtitle}}</td>
+	      <td><a href="/singleJobDetails?id={{id}}">{{jobtitle}}</td>
 	  </tr>
 	  <tr>
 	      <td>Number of vacancies:</td>
@@ -25,7 +26,8 @@
 	  </tr>
   </tbody>
 </table>
-</div>
 {{/jobs}}
+</div>
+
 
 {{> footer}}
