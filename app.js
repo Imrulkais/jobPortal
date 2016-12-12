@@ -323,6 +323,16 @@ app.get('/logout', function(req, res){
 //   res.redirect('/employeesign');
 // });
 
+
+// General pages 
+app.get('/allpostedjobs', function(req, res, next) {
+    // Id = req.params.id;
+    Id = req.query.id;
+    console.log("query id =" + Id);
+    generalAction.allJobs(req, res,req.user, Id);
+});
+
+
 app.get('/aboutus', function(req, res, next) {
     res.render('aboutus',
     { 

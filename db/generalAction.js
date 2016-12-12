@@ -39,3 +39,30 @@ exports.singleJobs = function(req, res, Id ){
     }
    }); 
 }
+
+
+
+exports.allJobs = function(req, res, Id ){
+
+console.log("Employee id is:" + Id);
+    var queryName = 'SELECT * FROM postnewjob WHERE companyindustrytype = "'+ Id +'"';
+    db.query(queryName,function(err, result) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        
+        res.render('allpostedjobs',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user : user,
+            jobs : result
+        });
+
+//         // req.flash('jobs', result);
+//         //     res.redirect('/postnewjobs');
+    }
+    
+});
+
+}

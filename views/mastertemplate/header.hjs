@@ -83,7 +83,6 @@
 					<nav>
 						<ul>
 							<li class="active"><a href="/">JOBS</a></li>
-							<li><a href="employerpannel">MY JOBS</a></li>
 							<li><a href="traning">TRAINING</a></li>
 							<li><a href="contactus">CONTACT US</a></li>
 							<li><a href="aboutus">ABOUT US</a></li>
@@ -105,9 +104,9 @@
       <a class="navbar-brand" href="#">Employee Panel</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="#"><a href="/postnewjobs">Post a Job</a></li>
-      <li><a href="#">Communication</a></li>
-      <li class="#"><a href="/postedjob">Posted Job</a></li>
+      <li class="#"><a href="/appliedjobs">Applied Jobs</a></li>
+      <!-- <li><a href="#">Communication</a></li>
+      <li class="#"><a href="/postedjob">Posted Job</a></li> -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"> Help</a></li>
@@ -135,7 +134,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="#"><a href="/postnewjobs">Post a Job</a></li>
-      <li><a href="singlejob">Single job</a></li>
+      <!-- <li><a href="singlejob">Single job</a></li> -->
       <li class="#"><a href="postedjob">Posted Job</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
