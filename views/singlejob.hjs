@@ -1,11 +1,12 @@
 {{> header}}
 
 
-
   <h2>Job Details</h2>
+  <h5>{{value}}</h5>
+      {{#singlejob}}
   <table class="table table-bordered table-hover fixed">
     <col width="30px" /> <col width="40px" />
-    {{#singlejob}}
+
     <tbody>
       <tr>
         <td>Company Name</td>
@@ -45,8 +46,15 @@
         <td>{{billingcontact}}</td>
       </tr>
     </tbody>
-    {{/singlejob}}
+    
   </table>
+  {{#user.username}}
+<a href="apply?userid={{user.id}}&id={{id}}"><button type="button" class="btn btn-success">Apply for this job</button></a>
+{{/user.username}}
+{{^user.username}}
+<a href="employeesign"><button type="button" class="btn btn-success">Login to apply for jobs</button></a>
+{{/user.username}}
 
 
+{{/singlejob}}
 {{> footer}}

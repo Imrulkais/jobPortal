@@ -6,8 +6,9 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db');
 var path = require('path');
+var generalAction = require('../db/generalAction');
 
-exports.singleJobs = function(req, res, Id ){
+exports.singleJobs = function(req, res, Id, value ){
 
     var queryName = 'SELECT * FROM postnewjob WHERE id = "'+ Id +'"';
 
@@ -16,9 +17,6 @@ exports.singleJobs = function(req, res, Id ){
         console.log(err);
     }
     else {
-    	// console.log("Formindustry--" + result[0].companyindustrytype);
-     //    var industry = db.query('SELECT * FROM industry WHERE id = "'+ result[0].companyindustrytype +'"');
-     //    console.log("industry--" + industry[0]);
 
         var newquery = 'SELECT * FROM industry WHERE id = "'+ result[0].companyindustrytype +'"';
         db.query(newquery,function(error, industry) {
@@ -32,7 +30,8 @@ exports.singleJobs = function(req, res, Id ){
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
             singlejob : result,
             industry : industry[0],
-            user: req.user
+            user: req.user,
+            value: value
         });
     	}
     });
@@ -42,7 +41,7 @@ exports.singleJobs = function(req, res, Id ){
 
 
 
-exports.allJobs = function(req, res, Id ){
+exports.allJobs = function(req, res, user, Id ){
 
 console.log("Employee id is:" + Id);
     var queryName = 'SELECT * FROM postnewjob WHERE companyindustrytype = "'+ Id +'"';
@@ -63,6 +62,43 @@ console.log("Employee id is:" + Id);
 //         //     res.redirect('/postnewjobs');
     }
     
+});
+
+}
+
+
+exports.applyJob =  function(req, res, userId, Id ){
+
+console.log("Employee id is:" + Id);
+
+var queryName = 'SELECT * FROM appliedjobs WHERE userid = "'+ userId +'" and jobid= "'+ Id +'"';
+
+db.query(queryName,function(err, result) {
+    if (err) {
+        console.log(err);
+    }
+    else
+    {
+        if(result[0]!= undefined){
+            var message = 'You have already applied for this job!';
+            generalAction.singleJobs(req,res,Id,message);
+        }
+        else{
+                var details = {
+                jobid: Id,
+                userid: userId
+                };
+                db.query('INSERT into  `appliedjobs` SET ?', details, function (err, result) {
+                    if (err)
+                        throw err;
+                    else{
+                        var insertMessage = 'Your application has been completed successfully!';
+                        generalAction.singleJobs(req,res,Id,insertMessage);
+                    }
+                });
+        }
+        
+    }
 });
 
 }

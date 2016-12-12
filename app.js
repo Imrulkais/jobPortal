@@ -253,12 +253,7 @@ app.get('/postedjob',isEmployeerAuthenticated, function(req, res) {
     postjobAction.postedJobs(req, res, req.user);
 });
 
-app.get('/singleJobDetails', function(req, res, next) {
-    // Id = req.params.id;
-    Id = req.query.id;
-    console.log("query id =" + Id);
-    generalAction.singleJobs(req, res, Id);
-});
+
 
 function isEmployeerAuthenticated(req, res, next) {
     if (req.user.aEmail)
@@ -313,6 +308,12 @@ app.post('/employeesign',
     })
 );
 
+app.get('/apply', function(req, res, next) {
+    userId = req.query.userid;
+    Id = req.query.id;
+    generalAction.applyJob(req, res,userId,Id);
+});
+
 app.get('/logout', function(req, res){
   console.log(req.user);
   req.logout();
@@ -325,6 +326,14 @@ app.get('/logout', function(req, res){
 
 
 // General pages 
+
+app.get('/singleJobDetails', function(req, res, next) {
+    // Id = req.params.id;
+    Id = req.query.id;
+    console.log("query id =" + Id);
+    generalAction.singleJobs(req, res, Id);
+});
+
 app.get('/allpostedjobs', function(req, res, next) {
     // Id = req.params.id;
     Id = req.query.id;
