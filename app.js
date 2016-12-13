@@ -319,6 +319,44 @@ app.get('/appliedjobs',isEmployeeAuthenticated, function(req, res, next) {
     employeeAction.appliedJobs(req,res,req.user.id);
 });
 
+app.get('/postResume',isEmployeeAuthenticated, function(req, res, next) {
+    console.log(req.body);
+
+    res.render('post_resume',
+    { 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user: req.user
+        });
+});
+
+app.post('/postResume',isEmployeeAuthenticated,function(req, res, next) {
+    console.log(req.body);
+    req.checkBody('nationalID', 'National ID is required. Minimum size is 10.').notEmpty().isLength({min:10});
+    var errors = req.validationErrors();
+
+    console.log(errors);
+    if (errors) {
+            
+            console.log(errors);
+            // req.flash( 'formdata',req.body); // load form data into flash
+            req.flash('errors', errors);
+           res.redirect('/myAccount');
+            // return done(null, false, req.flash('formdata', req.body));
+    }
+    else
+    {
+      console.log('hello');
+      // postResume.addEmployee(req, res);
+      postResume.findNationID(req, res);
+    }
+});
+
+app.post('/myAccount',isEmployeeAuthenticated,function(req, res, next) {
+    res.render ('postResume', {name: req.username});
+});
+
+
+
 function isEmployeeAuthenticated(req, res, next) {
     if (req.user.username)
         return next();
@@ -350,42 +388,6 @@ app.get('/allpostedjobs', function(req, res, next) {
     Id = req.query.id;
     console.log("query id =" + Id);
     generalAction.allJobs(req, res,req.user, Id);
-});
-
-app.get('/postResume', function(req, res, next) {
-    console.log(req.body);
-
-    res.render('post_resume',
-    { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
-        });
-
-    req.checkBody('nationalID', 'National ID is required. Minimum size is 10.').notEmpty().isLength({min:10});
-    var errors = req.validationErrors();
-
-    console.log(errors);
-    if (errors) {
-            
-            console.log(errors);
-            // req.flash( 'formdata',req.body); // load form data into flash
-            req.flash('errors', errors);
-           res.redirect('/myAccount');
-            // return done(null, false, req.flash('formdata', req.body));
-    }
-    else
-    {
-      console.log('hello');
-      postResume.addEmployee(req, res);
-      // postResume.findNationID(req, res);
-    }
-});});
-
-app.post('/postResume',function(req, res, next) {
-    console.log(req.body);
-
-
-app.post('/myAccount',function(req, res, next) {
-res.render ('postResume', {name: req.username});
 });
 
 
@@ -444,7 +446,7 @@ app.post('/test', function(req, res, next) {
 });
 
 
-// Websocket working
+// working on Websocket 
 
 // var http = require('http').Server(app);
 var io = require('socket.io').listen(3080);
@@ -463,9 +465,6 @@ io.on('connection', function(socket){
   });
 });
 
-// http.listen(process.env.PORT || 3080, function(){
-//   console.log('listening on *:3080');
-// });
 
 
 app.get('/login', function(req, res, next) {
