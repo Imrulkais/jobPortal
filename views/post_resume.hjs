@@ -1,0 +1,104 @@
+{{> header}}
+            {{#messages.success}}
+            <div class="alert alert-success">
+              {{ messages.success }}
+            </div>
+            {{/messages.success}}
+            {{#messages.errors}}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                    </div> 
+            {{/messages.errors}}
+
+            <div class ="panel-heading"><h2>Personal Details</h2></div>
+            <form action="postResume" method="post">
+                <div class="form-group">
+                    <label for="exampleInputUsername">Name:<span class="help-inline red">*</span></label>
+                    <input type="text" name="username" required class="form-control" id="exampleInputUsername" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <label for="fathersName">Father's Name :<span class="help-inline red">*</span></label>
+                    <input type="text" name="fathername" required class="form-control" id="fathersname" placeholder="Fathers Name">
+                </div>
+                <div class="form-group">
+                    <label for="mothersName">Mother's Name :<span class="help-inline red">*</span></label>
+                    <input type="text" name="mothersname" required class="form-control" id="mothersName" placeholder="Mothers Name">
+                </div>
+				<div class="form-group">
+                    <label>Gender:<span class="help-inline red">*</span></label>
+                    <select class="form-control" name="gender" required>
+                        <option>Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div> 
+                <div class="form-group">
+                    <label>Nationality :<span class="help-inline red">*</span></label>
+                    <select class="form-control" name="natioanality" required>
+                        <option>Select</option>
+                        <option value="Bangladeshi">Bangladeshi</option>
+                        <option value="German">German</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nationalIDnumber">National ID No :<span class="help-inline red">*</span></label>
+                    <input type="text" name="nationalID" required class="form-control" id="nationalIDnumber" placeholder="National ID No">
+                    <span class="help-inline red">{{ messages.nationalID }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="presentAdress">Present Address: <span class="help-inline red">*</span></label>
+                    <textarea class="form-control" rows="3" input name="presentAddress" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="permanentAddress">Permanent Address :<span class="help-inline red">*</span></label>
+                    <textarea class="form-control" rows="3" input name="permanentAddress" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Email :<span class="help-inline red">*</span></label>
+                    <input type="Email" name="email" required class="form-control" id="exampleInputEmail" placeholder="Email">
+                    <span class="help-inline red">{{ messages.email }}</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputMobile">Mobile :<span class="help-inline red">*</span></label>
+                    <input type="text" name="mobile" required class="form-control" id="exampleInputMobile" placeholder="Mobile">
+                </div>
+                <div class ="panel-heading"><h2>Career and Application Information </h2></div>
+                <div class="form-group">
+                    <label for="nationalIDnumber">Objective:<span class="help-inline red">*</span></label>
+                    <textarea class="form-control" rows="3" name="objective"></textarea>
+                <div class="form-group">
+                    <label for="PresentSalary">Present Salary :<span class="help-inline red">*</span></label>
+                    <input type="text" name="PresentSalary" required class="form-control" id="PresentSalary" placeholder="Present Salary">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername">Expected Salary :<span class="help-inline red">*</span></label>
+                    <input type="text" name="expectedSalary" required class="form-control" id="ExpectedSalary" placeholder="Expected Salary">
+                </div>
+                <div class="form-group">
+                    <label for="lookingfor" >Looking For :<span class="help-inline red">*</span></label>
+			  		<label class="radio-inline">
+			          	<input name="radioGroup" id="radio1" value="option1" type="radio">Entry Level
+			        </label>
+			        <label class="radio-inline">
+			          	<input name="radioGroup" id="radio2" value="option2" checked="" type="radio"> Mid Level
+			        </label>
+			        <label class="radio-inline">
+			          	<input name="radioGroup" id="radio3" value="option3" type="radio"> Top Level
+			        </label>
+                </div>
+              
+                <div class ="panel-heading"><h2>Other Relevant Information </h2></div>
+                <div class="form-group">
+                    <label for="careerSummary">Career Summary :<span class="help-inline red">*</span></label>
+                    <textarea class="form-control" rows="3" name= "careerSammary"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="SpecialQualification :">Special Qualification :<span class="help-inline red">*</span></label>
+                    <textarea class="form-control" rows="3" name= "SpecialQualification"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+            
+            {{> footer}}
