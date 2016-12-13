@@ -20,6 +20,7 @@ var employerAction = require('./db/employerAction');
 var employeeAction = require('./db/employeeAction');
 var postjobAction = require('./db/postjobAction');
 var generalAction = require('./db/generalAction');
+var postResume = require('./db/postResume');
 
 //Configuring flash
 var flash = require('express-flash');
@@ -349,6 +350,42 @@ app.get('/allpostedjobs', function(req, res, next) {
     Id = req.query.id;
     console.log("query id =" + Id);
     generalAction.allJobs(req, res,req.user, Id);
+});
+
+app.get('/postResume', function(req, res, next) {
+    console.log(req.body);
+
+    res.render('post_resume',
+    { 
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
+        });
+
+    req.checkBody('nationalID', 'National ID is required. Minimum size is 10.').notEmpty().isLength({min:10});
+    var errors = req.validationErrors();
+
+    console.log(errors);
+    if (errors) {
+            
+            console.log(errors);
+            // req.flash( 'formdata',req.body); // load form data into flash
+            req.flash('errors', errors);
+           res.redirect('/myAccount');
+            // return done(null, false, req.flash('formdata', req.body));
+    }
+    else
+    {
+      console.log('hello');
+      postResume.addEmployee(req, res);
+      // postResume.findNationID(req, res);
+    }
+});});
+
+app.post('/postResume',function(req, res, next) {
+    console.log(req.body);
+
+
+app.post('/myAccount',function(req, res, next) {
+res.render ('postResume', {name: req.username});
 });
 
 
