@@ -7,24 +7,26 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
                     <div class="bodycontent1">
                         <ul>
-                            <li><a href="#"> Accounting/Finance</a></li>
-                            <li><a href="#"> Bank/ Non-Bank Fin. Institution</a></li>
-                            <li><a href="#"> Commercial/Supply Chain</a></li>
+                            <li><a href="/allpostedjobs?id=1">IT & Telecommunication</a></li>
+                            <li><a href="/allpostedjobs?id=2">Accounting/Finance</a></li>
+                            <li><a href="/allpostedjobs?id=3"> Bank/ Non-Bank Fin. Institution</a></li>
+                            <li><a href="/allpostedjobs?id=4">Commercial/Supply Chain</a></li>
                             <li><a href="#"> Engineer/Architects</a></li>
                             <li><a href="#"> Garments/Textile</a></li>
                             <li><a href="#"> HR/Org. Development</a></li>
                             <li><a href="#"> Gen Mgt/Admin</a></li>
-                            <li><a href="#"> Design/Creative</a></li>
+                            
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="bodycontent1">
                         <ul>
+                            <li><a href="#"> Design/Creative</a></li>
                             <li><a href="#"> Production/Operation</a></li>
                             <li><a href="#"> Hospitality/ Travel/ Tourism</a></li>
                             <li><a href="#"> Beauty Care/ Health & Fitness</a></li>
-                            <li><a href="/allpostedjobs?id=1"> IT & Telecommunication</a></li>
+                            
                             <li><a href="#"> Marketing/Sales</a></li>
                             <li><a href="#"> Customer Support/Call Centre</a></li>
                             <li><a href="#"> Media/Ad./Event Mgt.</a></li>

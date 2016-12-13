@@ -1,0 +1,27 @@
+{{> header}}
+
+
+
+<div class="row">
+{{#appliedjob}}
+<table class="table borderless">
+  <tbody>
+	  <tr>
+	      <td>Company Name:</td>
+	      <td>{{companyname}}</td>
+	  </tr>
+	  <tr>
+	      <td>Job title:</td>
+	      <td><a href="/singleJobDetails?id={{id}}">{{jobtitle}}</td>
+	  </tr>
+	  <tr>
+	      <td>Deadline:</td>
+	      <td>{{applicationdeadline}}</td>
+	  </tr>
+  </tbody>
+</table>
+{{/appliedjob}}
+</div>
+
+
+{{> footer}}

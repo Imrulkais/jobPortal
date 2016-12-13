@@ -23,7 +23,7 @@
 					<div class="logo">
 						<img src="logo/logo.png">	
 					</div>
-         <h4>Here is something:</h4> {{ user.username }}
+         
          {{^ user}}
 					<div class="signin" data-toggle="modal" data-target="#signIn">SIGN IN</div>	
           
@@ -90,9 +90,9 @@
 					</nav>
 					</header>
 					<div class="searchbar">
-						<input type="text" placeholder=" Search by Keyword" id="keyword">
-						<input type="text" placeholder="Organization Type" id="organization">
-						<input type="submit" value="Search" id="submitbutton" a href="#"></a>
+						<!-- <input type="text" placeholder=" Search by title" id="keyword"> -->
+						<input type="text" placeholder="Search by title" id="organization">
+						<input type="submit" value="Search" id="submitbutton" a href="#" style="margin-right:10px;">
 					</div>
 
                 </div>

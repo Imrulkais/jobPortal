@@ -76,6 +76,33 @@ exports.addEmployee = function(req, res){
 };
 
 
+exports.appliedJobs = function(req, res, userId){
+
+var queryName = 'SELECT postnewjob.* FROM postnewjob INNER JOIN appliedjobs ON postnewjob.id = appliedjobs.jobid WHERE appliedjobs.userid = "'+ userId +'"';
+db.query(queryName,function(err, result) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("result is in aplied jobs:"+result[0]); 
+        if(result == undefined)
+        {
+            res.redirect('/');
+        }
+        else {
+            res.render('appliedjobs',
+                {
+                    partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+                    appliedjob : result,
+                    user: req.user
+                });
+        }
+    }
+    
+});
+
+};
+
 // Passport sign in
 
 

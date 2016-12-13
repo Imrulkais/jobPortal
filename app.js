@@ -314,6 +314,16 @@ app.get('/apply', function(req, res, next) {
     generalAction.applyJob(req, res,userId,Id);
 });
 
+app.get('/appliedjobs',isEmployeeAuthenticated, function(req, res, next) {
+    employeeAction.appliedJobs(req,res,req.user.id);
+});
+
+function isEmployeeAuthenticated(req, res, next) {
+    if (req.user.username)
+        return next();
+    res.redirect('/');
+}
+
 app.get('/logout', function(req, res){
   console.log(req.user);
   req.logout();
@@ -340,6 +350,7 @@ app.get('/allpostedjobs', function(req, res, next) {
     console.log("query id =" + Id);
     generalAction.allJobs(req, res,req.user, Id);
 });
+
 
 
 app.get('/aboutus', function(req, res, next) {

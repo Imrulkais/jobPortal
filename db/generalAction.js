@@ -20,20 +20,20 @@ exports.singleJobs = function(req, res, Id, value ){
 
         var newquery = 'SELECT * FROM industry WHERE id = "'+ result[0].companyindustrytype +'"';
         db.query(newquery,function(error, industry) {
-    if (err) {
-        console.log(err);
-    }
-    else{
-    console.log("industry:" +industry[0].name);
-        res.render('singlejob',
-        {
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
-            singlejob : result,
-            industry : industry[0],
-            user: req.user,
-            value: value
-        });
-    	}
+            if (err) {
+                console.log(err);
+            }
+            else{
+            console.log("industry:" +industry[0].name);
+                res.render('singlejob',
+                {
+                    partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+                    singlejob : result,
+                    industry : industry[0],
+                    user: req.user,
+                    value: value
+                });
+            	}
     });
     }
    }); 
