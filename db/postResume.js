@@ -6,7 +6,9 @@ var postResume = require('../db/postResume');
 
 exports.findNationalID = function(req, res){
 
-var queryName = 'SELECT * FROM postResume WHERE nationalIDnumber = "'+ req.body.nationalID +'"';
+console.log('coming here with national id');
+
+var queryName = 'SELECT * FROM employeeAccount WHERE nationalidnumber = "'+ req.body.nationalID +'"';
 db.query(queryName,function(err, result) {
     if (err) {
         console.log(err);
@@ -28,8 +30,9 @@ db.query(queryName,function(err, result) {
 };
 
 exports.findEmployeeEmail = function(req, res){
+console.log('email is getting');
 
-var queryName = 'SELECT * FROM postResume WHERE email = "'+ req.body.email +'"';
+var queryName = 'SELECT * FROM employeeAccount WHERE email = "'+ req.body.email +'"';
 db.query(queryName,function(err, result) {
     if (err) {
         console.log(err);
@@ -79,7 +82,7 @@ exports.addEmployee = function(req, res){
         else{
         console.log(' The value inserted. ');
                 req.flash('success', 'Your resume has been successfully updated.');
-            res.redirect('/myAccount');
+            res.redirect('/postResume');
         }
     });
 

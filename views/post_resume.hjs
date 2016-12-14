@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label for="nationalIDnumber">National ID No :<span class="help-inline red">*</span></label>
                     <input type="text" name="nationalID" required class="form-control" id="nationalIDnumber" placeholder="National ID No">
-                    <span class="help-inline red">{{ messages.nationalID }}</span>
+                    <span class="help-inline red">{{ messages.nationalIDRequired}}</span>
                 </div>
                 <div class="form-group">
                     <label for="presentAdress">Present Address: <span class="help-inline red">*</span></label>

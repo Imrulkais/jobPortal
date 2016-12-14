@@ -347,7 +347,7 @@ app.post('/postResume',isEmployeeAuthenticated,function(req, res, next) {
     {
       console.log('hello');
       // postResume.addEmployee(req, res);
-      postResume.findNationID(req, res);
+      postResume.findNationalID(req, res);
     }
 });
 
