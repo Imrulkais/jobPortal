@@ -1,20 +1,59 @@
 {{> header }}
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+
+
+    <div class="row" style="margin: 20px 0px;">
+        <div class="col-md-4">
+            <div class="well">
+                <h3>Employer Login</h3>
+                <ul class="list-group" id="employerlogin"></ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+
+            <div class="chat" id="messages"></div>
+            <form id="inputchat">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Enter message</label>
+                    <input type="text" class="form-control" id="m" placeholder="Messages" autocomplete="off"><br>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+
+
 
       <script src="http://localhost:3080/socket.io/socket.io.js"></script>
-<script>
-  var socket = io("http://localhost:3080");
-  $('form').submit(function(){
-    socket.emit('chat message', $('#m').val());
-    $('#m').val('');
-    return false;
-  });
-  socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').text(msg));
-  });
-</script>
+      <script>
+            var socket = io("http://localhost:3080");
+
+            $('form').submit(function(){
+              socket.emit('chat message', $('#m').val());
+              $('#m').val('');
+              return false;
+            });
+            socket.on('chat message', function(data){
+
+            $('#messages').append('<div class="well well-sm" style="padding:3px"><strong>' + data.username + ':  </strong>' + data.msg + '</div>');
+
+            });
+
+          function sendUser(){
+              socket.emit('username','{{user.username}}');
+            }
+            sendUser();
+                    socket.on('get users', function(data){
+                    
+                            var html = '';
+                            for(var i=0;i<data.length;i++){
+                              html+= '<li class="list-group-item"> '+ data[i] +'</li>'
+                            }
+                            $('#employerlogin').html(html);
+                    });
+
+      </script>
 
 {{> footer }}

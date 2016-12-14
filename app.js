@@ -446,24 +446,55 @@ app.post('/test', function(req, res, next) {
 });
 
 
-// working on Websocket 
+          // working on Websocket 
 
-// var http = require('http').Server(app);
-var io = require('socket.io').listen(3080);
+          // var http = require('http').Server(app);
+          var io = require('socket.io').listen(3080);
+          var employerSocket = [];
+          var employeeSocket = [];
+          var connections = [];
+
+          app.get('/websocket', isEmployeeAuthenticated, function(req, res){
+            res.render('websocket',
+              { 
+                      partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+                      user: req.user
+                  });
+          });
+
+          io.on('connection', function(socket){
+
+            console.log('coming here');
+              connections.push(socket);
+              console.log('connected: %s ',connections.length);
 
 
-app.get('/websocket', function(req, res){
-  res.render('websocket',
-    { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
-        });
-});
 
-io.on('connection', function(socket){
-    socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+              socket.on('disconnect',function(socket){
+                employeeSocket.splice(employeeSocket.indexOf(socket),1);
+                updateUsernames();   
+                connections.splice(connections.indexOf(socket),1);
+                console.log('Disconnected:%s connected',connections.length);
+              });
+
+
+            socket.on('username',function(data,callback){
+                      console.log('username is:' +data);
+                      // callback(true);
+                      socket.employeeSocket = data;
+                      employeeSocket.push(socket.employeeSocket);
+                      updateUsernames();
+                  });
+                  function updateUsernames(){
+                io.emit('get users', employeeSocket);
+                }
+
+
+            socket.on('chat message', function(data){
+              io.emit('chat message', {msg : data, username: socket.employeeSocket});
+            });
+
+          });
 
 
 
