@@ -462,6 +462,14 @@ app.post('/test', function(req, res, next) {
                   });
           });
 
+          app.get('/companyinterview', isEmployeerAuthenticated, function(req, res){
+            res.render('companyinterview',
+              { 
+                      partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+                      user: req.user
+                  });
+          });
+
           io.on('connection', function(socket){
 
             console.log('coming here');
@@ -481,7 +489,7 @@ app.post('/test', function(req, res, next) {
             socket.on('username',function(data,callback){
                       console.log('username is:' +data);
                       // callback(true);
-                      socket.employeeSocket = data;
+                      socket.employeeSocket = data.username;
                       employeeSocket.push(socket.employeeSocket);
                       updateUsernames();
                   });

@@ -42,7 +42,7 @@
             });
 
           function sendUser(){
-              socket.emit('username',{ username:'{{user.username}}' });
+              socket.emit('username',{ username:'{{user.cName}}' });
             }
             sendUser();
                     socket.on('get users', function(data){
