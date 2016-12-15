@@ -368,6 +368,15 @@ app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
+
+// View Resume Action //
+
+app.get('/viewresume',isEmployeeAuthenticated, function(req, res, next) {
+    employeeAction.viewresume(req,res,req.user.id);
+});
+
+
 // app.post('/employeesign', function(req, res, next) {
 //   console.log('working');
 //   res.redirect('/employeesign');

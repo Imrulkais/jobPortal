@@ -103,6 +103,37 @@ db.query(queryName,function(err, result) {
 
 };
 
+// View Resume
+
+
+exports.viewresume = function(req, res, userId){
+
+    var queryName = 'SELECT * FROM employeeaccount WHERE employeeid = "'+ userId +'"';
+    db.query(queryName,function(err, result) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log("result is in view resume"+result[0]);
+            if(result == undefined)
+            {
+                res.redirect('/');
+            }
+            else {
+                res.render('viewresume',
+                    {
+                        partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+                        viewresume : result,
+                        user: req.user
+                    });
+            }
+        }
+
+    });
+
+};
+
+
 // Passport sign in
 
 
