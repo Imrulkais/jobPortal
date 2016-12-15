@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ae7d2d1-4e28-4f51-9331-13a731595c62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.js" afterPath="$PROJECT_DIR$/db.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/viewresume.hjs" afterPath="$PROJECT_DIR$/views/viewresume.hjs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/post_resume.hjs" afterPath="$PROJECT_DIR$/views/post_resume.hjs" />
     </list>
     <ignored path="jobPortal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,17 +45,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_resume.hjs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="post_resume.hjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/post_resume.hjs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="86" column="77" lean-forward="false" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
+              <caret line="86" column="111" lean-forward="false" selection-start-line="86" selection-start-column="111" selection-end-line="86" selection-end-column="111" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewresume.hjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewresume.hjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/viewresume.hjs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -110,9 +109,9 @@
         <option value="$PROJECT_DIR$/views/mastertemplate/header.hjs" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/db/employeeAction.js" />
-        <option value="$PROJECT_DIR$/views/post_resume.hjs" />
         <option value="$PROJECT_DIR$/db.js" />
         <option value="$PROJECT_DIR$/views/viewresume.hjs" />
+        <option value="$PROJECT_DIR$/views/post_resume.hjs" />
       </list>
     </option>
   </component>
@@ -284,12 +283,12 @@
       <workItem from="1481290333057" duration="234000" />
       <workItem from="1481290604695" duration="1008000" />
       <workItem from="1481743325049" duration="69000" />
-      <workItem from="1481760621399" duration="767000" />
+      <workItem from="1481760621399" duration="964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12198000" />
+    <option name="totallyTimeSpent" value="12395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -672,18 +671,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/post_resume.hjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="86" column="77" lean-forward="false" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/viewresume.hjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="212" column="17" lean-forward="true" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/post_resume.hjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="86" column="111" lean-forward="false" selection-start-line="86" selection-start-column="111" selection-end-line="86" selection-end-column="111" />
           <folding />
         </state>
       </provider>
