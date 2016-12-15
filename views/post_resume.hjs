@@ -78,13 +78,13 @@
                 <div class="form-group">
                     <label for="lookingfor" >Looking For :<span class="help-inline red">*</span></label>
 			  		<label class="radio-inline">
-			          	<input name="radioGroup" id="radio1" value="option1" type="radio">Entry Level
+			          	<input name="radioGroup" id="radio1" value="Entry Level" type="radio">Entry Level
 			        </label>
 			        <label class="radio-inline">
-			          	<input name="radioGroup" id="radio2" value="option2" checked="" type="radio"> Mid Level
+			          	<input name="radioGroup" id="radio2" value="Mid Level" checked="" type="radio"> Mid Level
 			        </label>
 			        <label class="radio-inline">
-			          	<input name="radioGroup" id="radio3" value="option3" type="radio"> Top Level
+			          	<input name="radioGroup" id="radio3" value="Top Level" type="radio"> Top Level
 			        </label>
                 </div>
               

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ae7d2d1-4e28-4f51-9331-13a731595c62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/employeeAction.js" afterPath="$PROJECT_DIR$/db/employeeAction.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/post_resume.hjs" afterPath="$PROJECT_DIR$/views/post_resume.hjs" />
     </list>
     <ignored path="jobPortal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +48,8 @@
       <file leaf-file-name="post_resume.hjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/post_resume.hjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="84" column="28" lean-forward="true" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+            <state relative-caret-position="357">
+              <caret line="86" column="77" lean-forward="false" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -262,12 +261,12 @@
       <workItem from="1481290333057" duration="234000" />
       <workItem from="1481290604695" duration="1008000" />
       <workItem from="1481743325049" duration="69000" />
-      <workItem from="1481760621399" duration="388000" />
+      <workItem from="1481760621399" duration="502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11819000" />
+    <option name="totallyTimeSpent" value="11933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -644,8 +643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/post_resume.hjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="84" column="28" lean-forward="true" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+        <state relative-caret-position="357">
+          <caret line="86" column="77" lean-forward="false" selection-start-line="86" selection-start-column="77" selection-end-line="86" selection-end-column="77" />
           <folding />
         </state>
       </provider>
