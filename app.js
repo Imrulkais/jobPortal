@@ -347,14 +347,9 @@ app.post('/postResume',isEmployeeAuthenticated,function(req, res, next) {
     {
       console.log('hello');
       // postResume.addEmployee(req, res);
-      postResume.findNationalID(req, res);
+      postResume.findNationalID(req, res,req.user.id);
     }
 });
-
-app.post('/myAccount',isEmployeeAuthenticated,function(req, res, next) {
-    res.render ('postResume', {name: req.username});
-});
-
 
 
 function isEmployeeAuthenticated(req, res, next) {
@@ -399,6 +394,9 @@ app.get('/allpostedjobs', function(req, res, next) {
     generalAction.allJobs(req, res,req.user, Id);
 });
 
+app.post('/search', function(req, res, next) {
+    generalAction.searchByTitle(req, res);
+});
 
 
 app.get('/aboutus', function(req, res, next) {

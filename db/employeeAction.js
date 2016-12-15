@@ -108,7 +108,7 @@ db.query(queryName,function(err, result) {
 
 exports.viewresume = function(req, res, userId){
 
-    var queryName = 'SELECT * FROM employeeaccount WHERE employeeid = "'+ userId +'"';
+    var queryName = 'SELECT * FROM employeeAccount WHERE employeeid = "'+ userId +'"';
     db.query(queryName,function(err, result) {
         if (err) {
             console.log(err);

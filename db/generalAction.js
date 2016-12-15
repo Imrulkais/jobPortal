@@ -102,3 +102,28 @@ db.query(queryName,function(err, result) {
 });
 
 }
+
+exports.searchByTitle = function(req, res){
+
+    var queryName = 'SELECT * FROM postnewjob WHERE jobtitle LIKE "%'+ req.body.searchvalue +'%"';
+    console.log(queryName);
+    db.query(queryName,function(err, result) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log(result);
+        res.render('searchresult',
+        {
+            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
+            user: req.user,
+            jobs : result
+        });
+
+//         // req.flash('jobs', result);
+//         //     res.redirect('/postnewjobs');
+    }
+    
+});
+
+}

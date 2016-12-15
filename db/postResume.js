@@ -4,9 +4,9 @@ var db = require('../db');
 var postResume = require('../db/postResume');
 
 
-exports.findNationalID = function(req, res){
+exports.findNationalID = function(req, res, userId){
 
-console.log('coming here with national id');
+console.log('coming here with user id:'+userId);
 
 var queryName = 'SELECT * FROM employeeAccount WHERE nationalidnumber = "'+ req.body.nationalID +'"';
 db.query(queryName,function(err, result) {
@@ -22,15 +22,15 @@ db.query(queryName,function(err, result) {
             res.redirect('/postResume');
         }
         else 
-            postResume.findEmployeeEmail(req, res);
+            postResume.findEmployeeEmail(req, res, userId);
     }
     
 });
         
 };
 
-exports.findEmployeeEmail = function(req, res){
-console.log('email is getting');
+exports.findEmployeeEmail = function(req, res, userId){
+console.log('coming here with user id:'+userId);
 
 var queryName = 'SELECT * FROM employeeAccount WHERE email = "'+ req.body.email +'"';
 db.query(queryName,function(err, result) {
@@ -46,18 +46,18 @@ db.query(queryName,function(err, result) {
 
         }
         else 
-            postResume.addEmployee(req, res);
+            postResume.addEmployee(req, res, userId);
     }
     
 });
 
 };
 
-exports.addEmployee = function(req, res){
+exports.addEmployee = function(req, res, userId){
 
-    console.log("error not found");
+
     var usr = req.body;
-    console.log(usr);
+
     var details = {
         name: usr.username,
         fathersName: usr.fathername,
@@ -74,7 +74,8 @@ exports.addEmployee = function(req, res){
         expectedSalary: usr.expectedSalary,
         joblevel: usr.radioGroup,
         careerSummary: usr.careerSammary,
-        specialQualification: usr.SpecialQualification
+        specialQualification: usr.SpecialQualification,
+        employeeid: userId
     };
     db.query('INSERT into  `employeeAccount` SET ?', details, function (err, result) {
         if (err)
