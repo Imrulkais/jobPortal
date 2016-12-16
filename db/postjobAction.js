@@ -50,7 +50,7 @@ console.log("coming here now");
         console.log(err);
     }
     else {
-        
+
         res.render('postedjob',
         {
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
@@ -61,7 +61,7 @@ console.log("coming here now");
 //         // req.flash('jobs', result);
 //         //     res.redirect('/postnewjobs');
     }
-    
+
 });
 
 }
