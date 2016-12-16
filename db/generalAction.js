@@ -100,8 +100,9 @@ db.query(queryName,function(err, result) {
         
     }
 });
-
 }
+
+// Search by title
 
 exports.searchByTitle = function(req, res){
 
@@ -123,7 +124,7 @@ exports.searchByTitle = function(req, res){
 //         // req.flash('jobs', result);
 //         //     res.redirect('/postnewjobs');
     }
-    
+
 });
 
 }
