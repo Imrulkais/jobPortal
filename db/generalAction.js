@@ -8,6 +8,9 @@ var db = require('../db');
 var path = require('path');
 var generalAction = require('../db/generalAction');
 
+
+//Getting the single job details
+
 exports.singleJobs = function(req, res, Id, value ){
 
     var queryName = 'SELECT * FROM postnewjob WHERE id = "'+ Id +'"';
@@ -39,7 +42,7 @@ exports.singleJobs = function(req, res, Id, value ){
    }); 
 }
 
-
+//Getting the jobs in a specific category
 
 exports.allJobs = function(req, res, user, Id ){
 
@@ -66,6 +69,7 @@ console.log("Employee id is:" + Id);
 
 }
 
+//Getting the signed in user all applied jobs
 
 exports.applyJob =  function(req, res, userId, Id ){
 

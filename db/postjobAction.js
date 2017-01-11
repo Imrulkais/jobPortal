@@ -10,7 +10,7 @@ var postjobAction = require('../db/postjobAction');
 
 
 
-
+//Inserting the Job details
 
 exports.addJob = function(req, res, id ){
 
@@ -40,6 +40,8 @@ exports.addJob = function(req, res, id ){
     });
 
 };
+
+//Getting the posted jobs by already signed in Employer
 
 exports.postedJobs = function(req, res, user ){
 

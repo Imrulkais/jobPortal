@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 // Configuring Passport
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var db = require('./db/users');
+// var db = require('./db/users');
 
 var database = require('./db');
 var action = require('./db/action');
@@ -121,15 +121,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
-// API routes
-//app.get('/', function(req, res, next) {
-//  if(!req.user)
-//    res.render('login');
-//  else
-//    res.render('index', { userName: req.user.displayName });
-//});
-
+//Getting the index page
 
 app.get('/', function(req, res, next) {
     res.render('index',
@@ -139,6 +131,8 @@ app.get('/', function(req, res, next) {
         });
 });
 
+//Getting the training page
+
 app.get('/traning', function(req, res, next) {
     res.render('traning',
         {
@@ -147,7 +141,7 @@ app.get('/traning', function(req, res, next) {
         });
 });
 
-// Employer Actions
+//Getting the employer page
 
 app.get('/employercreate', function(req, res, next) {
     res.render('employercreate',
@@ -157,6 +151,7 @@ app.get('/employercreate', function(req, res, next) {
         });
 });
 
+//Employer registration
 
 app.post('/employerRegistration', function(req, res, next) {
 
@@ -181,12 +176,16 @@ app.post('/employerRegistration', function(req, res, next) {
 
 });
 
+//Employer signin page
+
 app.get('/employersign', function(req, res, next) {
     res.render('employersign',
     { 
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
         });
 });
+
+//Employer signin chech through post method
 
 app.post('/employersign',
     passport.authenticate('EmployerSignIn-local', {  
@@ -196,7 +195,7 @@ app.post('/employersign',
     })
 );
 
-// Employer pannel Action
+// Employer pannel Page
 
 app.get('/employerpannel', function(req, res, next) {
     res.render('employerpannel',
@@ -206,6 +205,8 @@ app.get('/employerpannel', function(req, res, next) {
         });
 });
 
+//Post a new job 
+
 app.get('/postnewjobs', isEmployeerAuthenticated,function(req, res, next) {
     res.render('postnewjobs',
         {
@@ -213,6 +214,8 @@ app.get('/postnewjobs', isEmployeerAuthenticated,function(req, res, next) {
             user : req.user
         });
 });
+
+//Posting a job with verification 
 
 app.post('/postjobs', isEmployeerAuthenticated, function(req, res, next) {
 
@@ -250,11 +253,14 @@ app.post('/postjobs', isEmployeerAuthenticated, function(req, res, next) {
 //         });
 // });
 
+//Showing posted jobs for an individual employer
+
 app.get('/postedjob',isEmployeerAuthenticated, function(req, res) {
     postjobAction.postedJobs(req, res, req.user);
 });
 
 
+//Checking Employer is logged in or not
 
 function isEmployeerAuthenticated(req, res, next) {
     if (req.user.aEmail)
@@ -262,7 +268,7 @@ function isEmployeerAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
-// Employee Actions
+// Employee Registration page showing
 
 app.get('/employeecreate', function(req, res, next) {
     res.render('employeecreate',
@@ -270,6 +276,8 @@ app.get('/employeecreate', function(req, res, next) {
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
         });
 });
+
+// Employee Registration verification and post
 
 app.post('/employeeRegistration', function(req, res, next) {
 
@@ -294,12 +302,16 @@ app.post('/employeeRegistration', function(req, res, next) {
     }
 });
 
+//Employee signin page 
+
 app.get('/employeesign', function(req, res, next) {
     res.render('employeesign',
     { 
             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
         });
 });
+
+//Employee authentication check
 
 app.post('/employeesign',
     passport.authenticate('EmployeeSignIn-local',{ 
@@ -309,15 +321,21 @@ app.post('/employeesign',
     })
 );
 
+//Apply on a Job after signin
+
 app.get('/apply', function(req, res, next) {
     userId = req.query.userid;
     Id = req.query.id;
     generalAction.applyJob(req, res,userId,Id);
 });
 
+//Showing the applied jobs after applying
+
 app.get('/appliedjobs',isEmployeeAuthenticated, function(req, res, next) {
     employeeAction.appliedJobs(req,res,req.user.id);
 });
+
+//Showing Post Resume page 
 
 app.get('/postResume',isEmployeeAuthenticated, function(req, res, next) {
     console.log(req.body);
@@ -328,6 +346,8 @@ app.get('/postResume',isEmployeeAuthenticated, function(req, res, next) {
             user: req.user
         });
 });
+
+//Posting a job with verification
 
 app.post('/postResume',isEmployeeAuthenticated,function(req, res, next) {
     console.log(req.body);
@@ -352,11 +372,15 @@ app.post('/postResume',isEmployeeAuthenticated,function(req, res, next) {
 });
 
 
+//Checking Employee authentication
+
 function isEmployeeAuthenticated(req, res, next) {
     if (req.user.username)
         return next();
     res.redirect('/');
 }
+
+//Logging out 
 
 app.get('/logout', function(req, res){
   console.log(req.user);
@@ -372,13 +396,10 @@ app.get('/viewresume',isEmployeeAuthenticated, function(req, res, next) {
 });
 
 
-// app.post('/employeesign', function(req, res, next) {
-//   console.log('working');
-//   res.redirect('/employeesign');
-// });
-
-
 // General pages 
+
+
+//Showing the single job details
 
 app.get('/singleJobDetails', function(req, res, next) {
     // Id = req.params.id;
@@ -387,6 +408,8 @@ app.get('/singleJobDetails', function(req, res, next) {
     generalAction.singleJobs(req, res, Id);
 });
 
+//Showing the jobs category wise
+
 app.get('/allpostedjobs', function(req, res, next) {
     // Id = req.params.id;
     Id = req.query.id;
@@ -394,10 +417,13 @@ app.get('/allpostedjobs', function(req, res, next) {
     generalAction.allJobs(req, res,req.user, Id);
 });
 
+//Search the job by title
+
 app.post('/search', function(req, res, next) {
     generalAction.searchByTitle(req, res);
 });
 
+//Showing about us page
 
 app.get('/aboutus', function(req, res, next) {
     res.render('aboutus',
@@ -407,6 +433,8 @@ app.get('/aboutus', function(req, res, next) {
         });
 });
 
+//Showing contactUs page 
+
 app.get('/contactus', function(req, res, next) {
     res.render('contactus',
     { 
@@ -415,51 +443,18 @@ app.get('/contactus', function(req, res, next) {
         });
 });
 
-app.get('/test', function(req, res, next) {
-    res.render('test',
-        { 
-            partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'} 
-        });
-});
-
-app.post('/test', function(req, res, next) {
-
-    req.checkBody('password', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
-    req.checkBody('confirmPassword', 'Password is too short. Minimum size is 6.').notEmpty().isLength({min:6});
-    var errors = req.validationErrors();
-    // console.log(errors);
-    if (errors) {
-            var messages = [];
-            errors.forEach(function(error) {
-
-              // messagess[error.param] = error.msg;
-                 messages.push(error.msg);
-            });
-            console.log(messages);
-            // req.session.errorssss = messagess;
-            console.log(req.body);
-            req.flash( 'formdata',req.body); // load form data into flash
-            req.flash('error', messages);
-
-            // console.log(formdata);
-           res.redirect('/test');
-            // return done(null, false, req.flash('formdata', req.body));
-    }
-    else {
-    action.addUser(req.body);
-  req.flash('success', 'You have been signed up');
-  res.redirect('/test');
-}
-});
 
 
           // working on Websocket 
 
-          // var http = require('http').Server(app);
+          // Configuring the websocket
+
           var io = require('socket.io').listen(3080);
           var employerSocket = [];
           var employeeSocket = [];
           var connections = [];
+
+          //Employee interview page
 
           app.get('/websocket', isEmployeeAuthenticated, function(req, res){
             res.render('websocket',
@@ -469,6 +464,8 @@ app.post('/test', function(req, res, next) {
                   });
           });
 
+          //Employee interview page
+
           app.get('/companyinterview', isEmployeerAuthenticated, function(req, res){
             res.render('companyinterview',
               { 
@@ -476,6 +473,8 @@ app.post('/test', function(req, res, next) {
                       user: req.user
                   });
           });
+
+          //Showing who are connected
 
           io.on('connection', function(socket){
 
@@ -492,6 +491,7 @@ app.post('/test', function(req, res, next) {
                 console.log('Disconnected:%s connected',connections.length);
               });
 
+            //Sending the username who are chatting
 
             socket.on('username',function(data,callback){
                       console.log('username is:' +data);
@@ -513,32 +513,10 @@ app.post('/test', function(req, res, next) {
 
 
 
-app.get('/login', function(req, res, next) {
-  res.render('login');
-});
-
-app.post('/login',
-    passport.authenticate('local', { failureRedirect: '/' }),
-    function(req, res) {
-      res.redirect('/');
-    }
-);
-
-app.get('/signup', function(req, res, next) {
-  res.render('signup');
-});
-
-app.post('/signup', function(req, res, next) {
-  console.log(req.body);
-  db.addUser(req.body);
-  req.flash('message', 'You have been signed up');
-  res.redirect('/signup');
-});
-
-app.get('/logout', function(req, res, next){
-  req.logout();
-  res.redirect('/');
-});
+// app.get('/logout', function(req, res, next){
+//   req.logout();
+//   res.redirect('/');
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

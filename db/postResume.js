@@ -4,6 +4,8 @@ var db = require('../db');
 var postResume = require('../db/postResume');
 
 
+//Checking the user national Id
+
 exports.findNationalID = function(req, res, userId){
 
 console.log('coming here with user id:'+userId);
@@ -29,6 +31,8 @@ db.query(queryName,function(err, result) {
         
 };
 
+//Checking Employee email address already present or not
+
 exports.findEmployeeEmail = function(req, res, userId){
 console.log('coming here with user id:'+userId);
 
@@ -52,6 +56,8 @@ db.query(queryName,function(err, result) {
 });
 
 };
+
+// Adding the employee details
 
 exports.addEmployee = function(req, res, userId){
 

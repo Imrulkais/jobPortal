@@ -4,7 +4,7 @@ var db = require('../db');
 
 
 
-
+//Adding the user
 
 exports.addUser = function(usr){
 

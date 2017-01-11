@@ -4,6 +4,8 @@ var db = require('../db');
 var employeeAction = require('../db/employeeAction');
 
 
+//Searching the Employee name
+
 exports.findEmployeeName = function(req, res){
 
 var queryName = 'SELECT * FROM employee WHERE username = "'+ req.body.username +'"';
@@ -26,6 +28,8 @@ db.query(queryName,function(err, result) {
 });
 };
 
+//Maching the email with username
+
 exports.findEmployeeEmail = function(req, res){
 
 var queryName = 'SELECT * FROM employee WHERE email = "'+ req.body.email +'"';
@@ -47,6 +51,9 @@ db.query(queryName,function(err, result) {
 });
 
 };
+
+
+//Registration an employee
 
 exports.addEmployee = function(req, res){
 
@@ -76,6 +83,8 @@ exports.addEmployee = function(req, res){
 };
 
 
+//Getting the applied jobs 
+
 exports.appliedJobs = function(req, res, userId){
 
 var queryName = 'SELECT postnewjob.* FROM postnewjob INNER JOIN appliedjobs ON postnewjob.id = appliedjobs.jobid WHERE appliedjobs.userid = "'+ userId +'"';
@@ -103,7 +112,7 @@ db.query(queryName,function(err, result) {
 
 };
 
-// View Resume
+// Getting the Employee account details 
 
 
 exports.viewresume = function(req, res, userId){
@@ -153,6 +162,7 @@ exports.findByUsername = function(username, cb) {
   });
     };
 
+//Finding by the userId
 
     exports.findById = function(id, cb) {
     console.log(id);

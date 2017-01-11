@@ -3,6 +3,8 @@ var router = express.Router();
 var db = require('../db');
 var employerAction = require('../db/employerAction');
 
+//Finding the Employer Email
+
 exports.findEmployerEmail = function(req, res){
 
     var queryName = 'SELECT * FROM employer WHERE aEmail = "'+ req.body.aEmail +'"';
@@ -27,6 +29,8 @@ exports.findEmployerEmail = function(req, res){
 
 };
 
+//Finding the existing esername
+
 exports.findEmployerName = function(req, res){
 
     var queryName = 'SELECT * FROM employer WHERE cName = "'+ req.body.cName +'"';
@@ -49,6 +53,8 @@ exports.findEmployerName = function(req, res){
     });
 
 };
+
+//Finding the Existing Employer Email
 
 exports.findEmployercEmail = function(req, res){
 
@@ -73,6 +79,8 @@ exports.findEmployercEmail = function(req, res){
 
 };
 
+//Finding the Existing Employer Personal Email
+
 exports.findEmployerpEmail = function(req, res){
 
     var queryName = 'SELECT * FROM employer WHERE pEmail = "'+ req.body.pEmail +'"';
@@ -96,7 +104,7 @@ exports.findEmployerpEmail = function(req, res){
 
 };
 
-
+//Adding the employer Details
 
 exports.addEmployer = function(req, res){
 
