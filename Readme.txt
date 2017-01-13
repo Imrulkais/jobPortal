@@ -1,4 +1,4 @@
-Project Name: Online Job Portal
+Project Name: Job Portal
 
 How to install and use this project-
 

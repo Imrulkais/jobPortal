@@ -245,13 +245,6 @@ app.post('/postjobs', isEmployeerAuthenticated, function(req, res, next) {
 
 });
 
-// app.get('/singlejob', function(req, res, next) {
-//     res.render('singlejob',
-//         {
-//             partials: {header: 'mastertemplate/header',footer: 'mastertemplate/footer'},
-//             user : req.user
-//         });
-// });
 
 //Showing posted jobs for an individual employer
 
@@ -512,11 +505,6 @@ app.get('/contactus', function(req, res, next) {
           });
 
 
-
-// app.get('/logout', function(req, res, next){
-//   req.logout();
-//   res.redirect('/');
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
